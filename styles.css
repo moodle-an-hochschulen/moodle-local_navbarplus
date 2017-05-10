@@ -1,0 +1,6 @@
+/* Float the icons right to be placed next to the existing icons "messages" and "notifications".*/
+header.navbar .localnavbarplus.nav-link {
+    float: right;
+    margin-left: 0;
+    padding-right: 10px;
+}
