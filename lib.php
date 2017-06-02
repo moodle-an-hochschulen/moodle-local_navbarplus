@@ -61,20 +61,18 @@ function local_navbarplus_render_navbar_output() {
                 $setting = trim($setting);
                 if (!empty($setting)) {
                     switch ($i) {
-                        //Check for the first param: icon
+                        // Check for the first param: icon.
                         case 0:
                             // If param contains "/", it's a Moodle pix icon.
-                            if (strpos($setting,'/') !== false){
-                                $itemicon = $OUTPUT->pix_icon($setting,'');
-                            }
-                            // If param contains "fa-", it's a Font Awesome icon.
-                            elseif (strpos($setting,'fa-') !== false){
+                            if (strpos($setting, '/') !== false) {
+                                $itemicon = $OUTPUT->pix_icon($setting, '');
+                            } else if (strpos($setting, 'fa-') !== false) { // If param contains "fa-", it's a Font Awesome icon.
                                 $itemicon = '<i class="fa ' . $setting . '"></i>';
                             }
                             break;
-                        // Check for the second param: URL
+                        // Check for the second param: URL.
                         case 1:
-                            // Get the URL
+                            // Get the URL.
                             try {
                                 $itemurl = new moodle_url($setting);
                             } catch (moodle_exception $exception) {
@@ -83,7 +81,7 @@ function local_navbarplus_render_navbar_output() {
                                 $itemurl = null;
                             }
                             break;
-                        // Check for the third param: text for title and alt attribute
+                        // Check for the third param: text for title and alt attribute.
                         case 2:
                             $itemtitle = $setting;
                             break;
@@ -91,11 +89,10 @@ function local_navbarplus_render_navbar_output() {
                 }
             }
             // Add link with icon as a child to the sourrounding div.
-            $output .= html_writer::link($itemurl, $itemicon, array('alt'=>$itemtitle, 'title'=>$itemtitle));
+            $output .= html_writer::link($itemurl, $itemicon, array('alt' => $itemtitle, 'title' => $itemtitle));
             $output .= html_writer::end_tag('div');
         }
-    }
-    else {
+    } else {
         $output = '';
     }
     return $output;

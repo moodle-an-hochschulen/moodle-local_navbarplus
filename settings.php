@@ -31,12 +31,12 @@ if ($hassiteconfig) {
     $page = new admin_settingpage('local_navbarplus',
             get_string('pluginname', 'local_navbarplus', null, true));
 
-if ($ADMIN->fulltree) {
-    // Create insert icons with links widget.
-    $setting = new admin_setting_configtextarea('local_navbarplus/inserticonswithlinks',
-            get_string('setting_inserticonswithlinks', 'local_navbarplus', null, true),
-            get_string('setting_inserticonswithlinks_desc', 'local_navbarplus', null, true),'', PARAM_RAW);
-    $page->add($setting);
+    if ($ADMIN->fulltree) {
+        // Create insert icons with links widget.
+        $setting = new admin_setting_configtextarea('local_navbarplus/inserticonswithlinks',
+                get_string('setting_inserticonswithlinks', 'local_navbarplus', null, true),
+                get_string('setting_inserticonswithlinks_desc', 'local_navbarplus', null, true), '', PARAM_RAW);
+        $page->add($setting);
     }
 
     // Add settings page to the appearance settings category.
