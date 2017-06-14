@@ -85,11 +85,15 @@ function local_navbarplus_render_navbar_output() {
                         case 2:
                             $itemtitle = $setting;
                             break;
+                        // Check for the fourth param: linktarget
+                        case 3:
+                            $target = $setting;
+                            break;
                     }
                 }
             }
             // Add link with icon as a child to the sourrounding div.
-            $output .= html_writer::link($itemurl, $itemicon, array('alt' => $itemtitle, 'title' => $itemtitle));
+            $output .= html_writer::link($itemurl, $itemicon, array('alt' => $itemtitle, 'title' => $itemtitle,'target' => $target));
             $output .= html_writer::end_tag('div');
         }
     } else {
