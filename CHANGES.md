@@ -4,6 +4,10 @@ moodle-local_navbarplus
 Changes
 -------
 
+### Unreleased
+
+* 2017-06-17 - Add Travis CI support
+
 ### Release v3.2-r2
 
 * 2017-06-02 - Make codechecker happy.
