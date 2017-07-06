@@ -39,7 +39,7 @@ function local_navbarplus_render_navbar_output() {
 
     // Make a new array on delimiter "new line".
     if (isset($config->inserticonswithlinks)) {
-        // Reverse the array because the icons are floeted right and would be displayed in the wrong sequence otherwise.
+        // Reverse the array because the icons are floated right and would be displayed in the wrong sequence otherwise.
         $lines = array_reverse(explode("\n", $config->inserticonswithlinks));
         $output = '';
 
@@ -53,43 +53,82 @@ function local_navbarplus_render_navbar_output() {
             $itemicon = null;
             $itemurl = null;
             $itemtitle = null;
+            $itemvisible = false;
+            $itemopeninnewwindow = false;
 
             $output .= html_writer::start_tag('div', array('class' => 'localnavbarplus nav-link'));
             // Make a new array on delimiter "|".
             $settings = explode('|', $line);
-            foreach ($settings as $i => $setting) {
-                $setting = trim($setting);
-                if (!empty($setting)) {
-                    switch ($i) {
-                        // Check for the first param: icon.
-                        case 0:
-                            // If param contains "/", it's a Moodle pix icon.
-                            if (strpos($setting, '/') !== false) {
-                                $itemicon = $OUTPUT->pix_icon($setting, '');
-                            } else if (strpos($setting, 'fa-') !== false) { // If param contains "fa-", it's a Font Awesome icon.
-                                $itemicon = '<i class="fa ' . $setting . '"></i>';
-                            }
-                            break;
-                        // Check for the second param: URL.
-                        case 1:
-                            // Get the URL.
-                            try {
-                                $itemurl = new moodle_url($setting);
-                            } catch (moodle_exception $exception) {
-                                // We're not actually worried about this, we don't want to mess up the display
-                                // just for a wrongly entered URL.
-                                $itemurl = null;
-                            }
-                            break;
-                        // Check for the third param: text for title and alt attribute.
-                        case 2:
-                            $itemtitle = $setting;
-                            break;
+            // Check for the mandatory conditions first.
+            // If array contains too less or too many items, do not proceed and therefore do not display the item.
+            // Furthermore check it at least the first three mandatory params are not an empty string.
+            if (count($settings) >= 3 && count($settings) <= 5 &&
+                $settings[0] !== '' && $settings[1] !== '' && $settings[2] !== '') {
+                foreach ($settings as $i => $setting) {
+                    $setting = trim($setting);
+                    if (!empty($setting)) {
+                        switch ($i) {
+                            // Check for the mandatory first param: icon.
+                            case 0:
+                                $moodlepixpattern = '~^[a-z]/[\w\d-_]+$~';
+                                $faiconpattern = '~^fa-[\w\d-]+$~';
+                                // Check if it's a Moodle pix icon.
+                                if (preg_match($moodlepixpattern, $setting) > 0) {
+                                    $itemicon = $OUTPUT->pix_icon($setting, '');
+                                    $itemvisible = true;
+                                } else if (preg_match($faiconpattern, $setting) > 0) { // Check if it's a Font Awesome icon.
+                                    $itemicon = '<i class="fa ' . $setting . '"></i>';
+                                    $itemvisible = true;
+                                }
+                                break;
+                            // Check for the mandatory second param: URL.
+                            case 1:
+                                // Get the URL.
+                                try {
+                                    $itemurl = new moodle_url($setting);
+                                    $itemvisible = true;
+                                } catch (moodle_exception $exception) {
+                                    // We're not actually worried about this, we don't want to mess up the display
+                                    // just for a wrongly entered URL. We just hide the icon in this case.
+                                    $itemurl = null;
+                                    $itemvisible = false;
+                                }
+                                break;
+                            // Check for the mandatory third param: text for title and alt attribute.
+                            case 2:
+                                $itemtitle = $setting;
+                                $itemvisible = true;
+                                break;
+                            // Check for the optional fourth param: language support.
+                            case 3:
+                                // Only proceed if something is entered here. This parameter is optional.
+                                // If no language is given the icon will be displayed in the navbar by default.
+                                $itemlanguages = array_map('trim', explode(',', $setting));
+                                $itemvisible &= in_array(current_language(), $itemlanguages);
+                                break;
+                            // Check for the optional fifth param: the target attribute.
+                            case 4:
+                                if ($setting == 'true') {
+                                    $itemopeninnewwindow = true;
+                                    $itemvisible = true;
+                                }
+                                break;
+                        }
                     }
                 }
             }
-            // Add link with icon as a child to the sourrounding div.
-            $output .= html_writer::link($itemurl, $itemicon, array('alt' => $itemtitle, 'title' => $itemtitle));
+            // Add link with icon as a child to the sourrounding div only if it should be displayed.
+            // This is if all mandatory params are set and the item matches the optional given language setting.
+            if ($itemvisible) {
+                // Set attributes for title and alt.
+                $attributes = array('alt' => $itemtitle, 'title' => $itemtitle);
+                // If optional param for itemopeninnewwindow is set to true add a target=_blank to the link.
+                if ($itemopeninnewwindow) {
+                    $attributes['target'] = '_blank';
+                }
+                // Add the link to the HTML.
+                $output .= html_writer::link($itemurl, $itemicon, $attributes);
+            }
             $output .= html_writer::end_tag('div');
         }
     } else {

@@ -6,6 +6,7 @@ Changes
 
 ### Unreleased
 
+* 2017-06-26 - Added possibility to add language support and new window attribute.
 * 2017-06-17 - Add Travis CI support
 
 ### Release v3.2-r2

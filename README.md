@@ -41,17 +41,23 @@ There, you find only one setting:
 ### 1. Icons with links
 
 With this setting you can add link icons to the header navbar left to the icons "messages" and "notifications".
-Each line consists of an icon image, a link URL and a text, separated by pipe characters. Each icon needs to be written in a new line. For example:
+Each line consists of an icon image, a link URL, a text, supported language(s) (optional) and new window setting (optional) - separated by pipe characters. Each icon needs to be written in a new line. For example:
 
 ```
-a/help|http://moodle.org|Moodle
-fa-sign-out|/login/logout.php|Logout
+a/help|http://moodle.org|Moodle|en,de|true
+fa-sign-out|/login/logout.php|Logout||false
 ```
 
 Further information to the parameters:
 * Image: You can add identifiers for a Moodle icon from the pix folder (<a href="https://github.com/moodle/moodle/tree/master/pix">see the icon list on github.com</a>) or a Font Awesome icon identifier (<a href="http://fontawesome.io/icons/">See the icon list on fontawesome.io</a>). Font Awesome is neither included in Moodle's core Clean nor Boost theme, but there are some Boost child themes and other solutions from third parties which add Font Awesome support to Moodle.
 * Link: The link target can be defined by a full web URL (e.g. https://moodle.org) or a relative path within your Moodle instance (e.g. /login/logout.php).
 * Title: This text will be written in the title and alt attributes of the icon.
+* Supported language(s) (optional): This setting can be used for displaying the link to users of the specified language only. Separate more than one supported language with commas. If the link should be displayed in all languages, then leave this field empty.
+* New window (optional): By default the link will be opened in the same window and the value of this setting is set to false. If you want to open the link in a new window set the value to true.
+
+Please note:
+* Pipe dividing for optional parameters is always needed if they are located between other options. This means that you have to separate params with the pipe character although they are empty. Also see the example for the Font Awesome icon above.
+* If the icon does not show up in the navbar, please check if all mandatory params are set correctly and if the optional language setting fits to your current Moodle user language.
 
 
 How this plugin works / Pitfalls
