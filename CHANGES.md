@@ -4,7 +4,7 @@ moodle-local_navbarplus
 Changes
 -------
 
-### Unreleased
+### Release v3.2-r3
 
 * 2017-06-26 - Added possibility to add language support and new window attribute.
 * 2017-06-17 - Add Travis CI support
