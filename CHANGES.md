@@ -4,6 +4,9 @@ moodle-local_navbarplus
 Changes
 -------
 
+### Unreleased
+* 2017-08-11 - Setting to place an icon in the navbar for users to restart user tours of the current page.
+
 ### Release v3.2-r3
 
 * 2017-06-26 - Added possibility to add language support and new window attribute.

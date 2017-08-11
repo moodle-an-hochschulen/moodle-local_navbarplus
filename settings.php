@@ -37,6 +37,14 @@ if ($hassiteconfig) {
                 get_string('setting_inserticonswithlinks', 'local_navbarplus', null, true),
                 get_string('setting_inserticonswithlinks_desc', 'local_navbarplus', null, true), '', PARAM_RAW);
         $page->add($setting);
+
+        // Setting for adding a link to reset the user tours in the navbar.
+        $name = 'local_navbarplus/resetusertours';
+        $title = get_string('setting_resetusertours', 'local_navbarplus', null, true);
+        $description = get_string('setting_resetusertours_desc', 'local_navbarplus', null, true);
+        $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
+
+        $page->add($setting);
     }
 
     // Add settings page to the appearance settings category.

@@ -36,7 +36,7 @@ After installing local_navbarplus, the plugin does not do anything to Moodle yet
 To configure the plugin and its behaviour, please visit:
 Site administration -> Appearance -> Navbar Plus.
 
-There, you find only one setting:
+There, you find two settings:
 
 ### 1. Icons with links
 
@@ -59,6 +59,12 @@ Please note:
 * Pipe dividing for optional parameters is always needed if they are located between other options. This means that you have to separate params with the pipe character although they are empty. Also see the example for the Font Awesome icon above.
 * If the icon does not show up in the navbar, please check if all mandatory params are set correctly and if the optional language setting fits to your current Moodle user language.
 
+### 2. Reset user tour link
+
+With this setting you can place a Font Awesome map icon in the navbar with which the user is able to restart the user tour for the current page. By default Boost places the link to reset the user tour within the footer. This might not be eye cathing. With this setting you can place the link to the more visible navbar.
+
+Please note:
+As there is no even vaguely fitting icon in the Moodle core, we have no fallback for themes that do not implement Font Awesome (from Moodle 3.3 onwards this will be integrated into Moodle core). If you use such a theme this setting will have no affect.
 
 How this plugin works / Pitfalls
 --------------------------------

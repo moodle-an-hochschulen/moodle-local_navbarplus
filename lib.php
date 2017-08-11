@@ -36,12 +36,13 @@ function local_navbarplus_render_navbar_output() {
 
     // Fetch overall config.
     $config = get_config('local_navbarplus');
+    // Initialize output.
+    $output = '';
 
     // Make a new array on delimiter "new line".
     if (isset($config->inserticonswithlinks)) {
         // Reverse the array because the icons are floated right and would be displayed in the wrong sequence otherwise.
         $lines = array_reverse(explode("\n", $config->inserticonswithlinks));
-        $output = '';
 
         // Parse item settings.
         foreach ($lines as $line) {
@@ -131,8 +132,30 @@ function local_navbarplus_render_navbar_output() {
             }
             $output .= html_writer::end_tag('div');
         }
-    } else {
-        $output = '';
+    }
+    // If setting resetuseertours is enabled.
+    if (isset($config->resetusertours)) {
+        if (isloggedin() || !isguestuser()) {
+            // Get the tour for the current page.
+            $tour = \tool_usertours\manager::get_current_tour();
+            if (!empty($tour)) {
+                // Open div.
+                $output .= html_writer::start_tag('div', array('class' => 'localnavbarplus nav-link',
+                                                               'id'    => 'local_navbarplus_resetusertour'));
+                // Use the Font Awesome icon "map".
+                $itemicon = '<i class="fa fa-map"></i>';
+                // Use the string for resetting the tour.
+                $resetstring = get_string('resettouronpage', 'tool_usertours');
+                $resethint = get_string('resetusertours_hint', 'local_navbarplus');
+                // Set this as the alt and title attribute and set the data action for resetting the tour.
+                $attributes = array('alt' => $resetstring, 'title' => $resetstring . ' ' . $resethint,
+                                    'data-action' => 'tool_usertours/resetpagetour');
+                // Add the link to the HTML.
+                $output .= html_writer::link('#', $itemicon, $attributes);
+                // Close div.
+                $output .= html_writer::end_tag('div');
+            }
+        }
     }
     return $output;
 }
