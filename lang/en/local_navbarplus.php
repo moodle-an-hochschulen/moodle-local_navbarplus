@@ -49,5 +49,5 @@ Please note:
 $string['setting_resetusertours'] = 'Reset user tour link';
 $string['setting_resetusertours_desc'] = 'With this setting you can place a Font Awesome map icon in the navbar with which the user is able to restart the user tour for the current page. By default Boost places the link to reset the user tour within the footer. This might not be eye cathing. With this settung you can place the link to the more visible navbar.<br/>
 Please note: <br/>
-As the user tours were introduced with theme Boost only, this setting will not have any impact on other (non Boost based) themes. In Clean theme, this icon will not be displayed even if this setting is enabled.>';
+As there is no even vaguely fitting icon in the Moodle core, we have no fallback for themes that do not implement Font Awesome (from Moodle 3.3 onwards this will be integrated into Moodle core). If you use such a theme this setting will have no affect.';
 $string['resetusertours_hint'] = '(Could take a short time)';
