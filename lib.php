@@ -57,7 +57,6 @@ function local_navbarplus_render_navbar_output() {
             $itemvisible = false;
             $itemopeninnewwindow = false;
 
-            $output .= html_writer::start_tag('div', array('class' => 'localnavbarplus nav-link'));
             // Make a new array on delimiter "|".
             $settings = explode('|', $line);
             // Check for the mandatory conditions first.
@@ -128,9 +127,11 @@ function local_navbarplus_render_navbar_output() {
                     $attributes['target'] = '_blank';
                 }
                 // Add the link to the HTML.
+                $output .= html_writer::start_tag('div', array('class' => 'localnavbarplus nav-link'));
                 $output .= html_writer::link($itemurl, $itemicon, $attributes);
+                $output .= html_writer::end_tag('div');
             }
-            $output .= html_writer::end_tag('div');
+
         }
     }
     // If setting resetuseertours is enabled.
