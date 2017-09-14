@@ -4,7 +4,7 @@ moodle-local_navbarplus
 Changes
 -------
 
-#### Unreleased
+#### Release v3.2-r6
 
 * 2017-09-14 - Fix to prevent adding empty containers if elements shall not be displayed.
 
