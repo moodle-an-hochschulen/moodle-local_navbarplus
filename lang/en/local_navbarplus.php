@@ -52,4 +52,4 @@ Please note: <br/>
 As there is no even vaguely fitting icon in the Moodle core, we have no fallback for themes that do not implement Font Awesome (from Moodle 3.3 onwards this will be integrated into Moodle core). If you use such a theme this setting will have no affect.';
 $string['resetusertours_hint'] = '(Could take a short time)';
 $string['setting_fa_usertours'] = 'Your icon name';
-$string['setting_fa_usertours_desc'] = 'Add your favorite icon name from font awesome <a href="http://fontawesome.io/icons/" target="_blank">Font Awesome...\"</a> (Example: fa-map)';
+$string['setting_fa_usertours_desc'] = 'Add your favorite icon name from <a href="http://fontawesome.io/icons/" target="_blank">Font Awesome..."</a> (Example: fa-map)';
