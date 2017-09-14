@@ -53,4 +53,3 @@ As there is no even vaguely fitting icon in the Moodle core, we have no fallback
 $string['resetusertours_hint'] = '(Could take a short time)';
 $string['setting_fa_usertours'] = 'Your icon name';
 $string['setting_fa_usertours_desc'] = 'Add your favorite icon name from font awesome <a href="http://fontawesome.io/icons/ target="_blank">Font Awesome...</a> (Examle: fa-map)';
-
