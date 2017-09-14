@@ -144,7 +144,8 @@ function local_navbarplus_render_navbar_output() {
                 $output .= html_writer::start_tag('div', array('class' => 'localnavbarplus nav-link',
                                                                'id'    => 'local_navbarplus_resetusertour'));
                 // Use the Font Awesome icon "map".
-                $itemicon = '<i class="fa fa-map"></i>';
+                $fa_usertours = "fa-info-circle";
+                $itemicon = '<i class="fa $fa_usertours"></i>';
                 // Use the string for resetting the tour.
                 $resetstring = get_string('resettouronpage', 'tool_usertours');
                 $resethint = get_string('resetusertours_hint', 'local_navbarplus');
