@@ -4,7 +4,11 @@ moodle-local_navbarplus
 Changes
 -------
 
-#### Release v3.2-r6
+### Unreleased
+
+* 2017-09-18 - Added a hint to the README.md how to individually set another icon for the reset user tour feature.
+
+### Release v3.2-r6
 
 * 2017-09-14 - Fix to prevent adding empty containers if elements shall not be displayed.
 
