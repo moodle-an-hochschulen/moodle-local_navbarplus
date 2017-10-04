@@ -4,7 +4,7 @@ moodle-local_navbarplus
 Changes
 -------
 
-### Unreleased
+### Release v3.2-r7
 
 * 2017-10-04 - Added possibility to add an individual element id.
 * 2017-10-04 - Added possibility to add individual CSS classes.
