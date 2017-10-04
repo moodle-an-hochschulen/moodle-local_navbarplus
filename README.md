@@ -44,7 +44,7 @@ With this setting you can add link icons to the header navbar left to the icons 
 Each line consists of an icon image, a link URL, a text, supported language(s) (optional) and new window setting (optional) - separated by pipe characters. Each icon needs to be written in a new line. For example:
 
 ```
-a/help|http://moodle.org|Moodle|en,de|true
+a/help|http://moodle.org|Moodle|en,de|true|hidden-small-down
 fa-sign-out|/login/logout.php|Logout||false
 ```
 
@@ -54,6 +54,8 @@ Further information to the parameters:
 * Title: This text will be written in the title and alt attributes of the icon.
 * Supported language(s) (optional): This setting can be used for displaying the link to users of the specified language only. Separate more than one supported language with commas. If the link should be displayed in all languages, then leave this field empty.
 * New window (optional): By default the link will be opened in the same window and the value of this setting is set to false. If you want to open the link in a new window set the value to true.
+* Additional classes (optional): You can add individual classes with this optional parameter. A common use case might be to add Bootstrap's responsive classes to hide an icon for specific display sizes. You can look up the definitions for the responsive Bootstrap classes for <a href="https://v4-alpha.getbootstrap.com/layout/responsive-utilities/">Bootstrap version 4</a> (for all Boost based themes) or for <a href="http://getbootstrap.com/2.3.2/scaffolding.html#responsive">Bootstrap version 2</a> (for all Boostrapbase based themes).
+The most important classes for Boost based themes might be "hidden-sm-down" for hiding an icon on small devices or "hidden-sm-up" for only displaying the icon on small screens.
 
 Please note:
 * Pipe dividing for optional parameters is always needed if they are located between other options. This means that you have to separate params with the pipe character although they are empty. Also see the example for the Font Awesome icon above.
@@ -61,7 +63,7 @@ Please note:
 
 ### 2. Reset user tour link
 
-With this setting you can place a Font Awesome map icon in the navbar with which the user is able to restart the user tour for the current page. By default Boost places the link to reset the user tour within the footer. This might not be eye cathing. With this setting you can place the link to the more visible navbar.
+With this setting you can place a Font Awesome map icon in the navbar with which the user is able to restart the user tour for the current page. By default Boost places the link to reset the user tour within the footer. This might not be eye catching. With this setting you can place the link to the more visible navbar.
 
 Please note:
 
