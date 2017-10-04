@@ -6,6 +6,7 @@ Changes
 
 ### Unreleased
 
+* 2017-10-04 - Added possibility to add an individual element id.
 * 2017-10-04 - Added possibility to add individual CSS classes.
 * 2017-09-18 - Added a hint to the README.md how to individually set another icon for the reset user tour feature.
 

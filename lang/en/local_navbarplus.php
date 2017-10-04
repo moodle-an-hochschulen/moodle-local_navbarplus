@@ -41,6 +41,7 @@ Further information to the parameters:
 <li><b>New window (optional)</b>:  By default the link will be opened in the same window and the value of this setting is set to false. If you want to open the link in a new window set the value to true.</li>
 <li><b>Additional classes (optional)</b>: You can add individual classes with this optional parameter. A common usecase might be to add Bootstrap\'s responsive classes to hide an icon for specific display sizes. <br/> You can look up the definitions for the responsive Bootstrap classes for <a href="https://v4-alpha.getbootstrap.com/layout/responsive-utilities/">Bootstrap version 4</a> (for all Boost based themes) or for <a href="http://getbootstrap.com/2.3.2/scaffolding.html#responsive">Bootstrap version 2</a> (for all Boostrapbase based themes).
 The most important classes for Boost based themes might be "hidden-sm-down" for hiding an icon on small devices or "hidden-sm-up" for only displaying the icon on small screens.</li>
+<li><b>ID (optional)</b>: You can add an individual ID to your icon element. This makes it possible to address this specific icon easily with CSS (for example for the Moodle user tours). The string you enter here will always be prefixed with "localnavbarplus-".</li>
 </ul>
 Please note:
 <ul>

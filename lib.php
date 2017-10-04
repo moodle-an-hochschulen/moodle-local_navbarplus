@@ -63,7 +63,7 @@ function local_navbarplus_render_navbar_output() {
             // Check for the mandatory conditions first.
             // If array contains too less or too many items, do not proceed and therefore do not display the item.
             // Furthermore check it at least the first three mandatory params are not an empty string.
-            if (count($settings) >= 3 && count($settings) <= 6 &&
+            if (count($settings) >= 3 && count($settings) <= 7 &&
                 $settings[0] !== '' && $settings[1] !== '' && $settings[2] !== '') {
                 foreach ($settings as $i => $setting) {
                     $setting = trim($setting);
@@ -118,6 +118,10 @@ function local_navbarplus_render_navbar_output() {
                             case 5:
                                 $itemadditionalclasses = $setting;
                                 break;
+                            // Check for optional seventh parameter: additional id.
+                            case 6:
+                                $itemid = $setting;
+                                break;
                         }
                     }
                 }
@@ -137,8 +141,12 @@ function local_navbarplus_render_navbar_output() {
                 if (!empty($itemadditionalclasses)) {
                     $itemclasses .= ' ' . $itemadditionalclasses;
                 }
+                // Add optional individual id prefixed with plugin name.
+                if (!empty($itemid)) {
+                    $itemid = 'localnavbarplus-' . $itemid;
+                }
                 // Add the link to the HTML.
-                $output .= html_writer::start_tag('div', array('class' => $itemclasses));
+                $output .= html_writer::start_tag('div', array('class' => $itemclasses, 'id' => $itemid));
                 $output .= html_writer::link($itemurl, $itemicon, $attributes);
                 $output .= html_writer::end_tag('div');
             }
