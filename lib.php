@@ -126,11 +126,11 @@ function local_navbarplus_render_navbar_output() {
                     }
                 }
             }
-            // Add link with icon as a child to the sourrounding div only if it should be displayed.
+            // Add link with icon as a child to the surrounding div only if it should be displayed.
             // This is if all mandatory params are set and the item matches the optional given language setting.
             if ($itemvisible) {
                 // Set attributes for title and alt.
-                $attributes = array('alt' => $itemtitle, 'title' => $itemtitle);
+                $linkattributes = array('alt' => $itemtitle, 'title' => $itemtitle);
                 // If optional param for itemopeninnewwindow is set to true add a target=_blank to the link.
                 if ($itemopeninnewwindow) {
                     $attributes['target'] = '_blank';
@@ -141,13 +141,15 @@ function local_navbarplus_render_navbar_output() {
                 if (!empty($itemadditionalclasses)) {
                     $itemclasses .= ' ' . $itemadditionalclasses;
                 }
+                // Initialise attribute array for the div tag.
+                $divattributes['class'] = $itemclasses;
                 // Add optional individual id prefixed with plugin name.
                 if (!empty($itemid)) {
-                    $itemid = 'localnavbarplus-' . $itemid;
+                    $divattributes['id'] = 'localnavbarplus-' . $itemid;
                 }
                 // Add the link to the HTML.
-                $output .= html_writer::start_tag('div', array('class' => $itemclasses, 'id' => $itemid));
-                $output .= html_writer::link($itemurl, $itemicon, $attributes);
+                $output .= html_writer::start_tag('div', $divattributes);
+                $output .= html_writer::link($itemurl, $itemicon, $linkattributes);
                 $output .= html_writer::end_tag('div');
             }
 

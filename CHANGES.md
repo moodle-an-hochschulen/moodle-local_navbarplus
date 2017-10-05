@@ -4,6 +4,10 @@ moodle-local_navbarplus
 Changes
 -------
 
+### Unreleased
+
+* 2017-10-05 - Fixed undefined property notice bug caused by the additional id parameter.
+
 ### Release v3.2-r7
 
 * 2017-10-04 - Added possibility to add an individual element id.
