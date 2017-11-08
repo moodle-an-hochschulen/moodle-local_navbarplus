@@ -4,6 +4,10 @@ moodle-local_navbarplus
 Changes
 -------
 
+### Unreleased
+
+* 2017-11-08 - Updated travis.yml to use newer node version for fixing TravisCI error.
+
 ### Release v3.2-r8
 
 * 2017-10-05 - Fixed undefined property notice bug caused by the additional id parameter.
