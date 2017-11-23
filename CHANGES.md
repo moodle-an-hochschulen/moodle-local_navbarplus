@@ -4,7 +4,7 @@ moodle-local_navbarplus
 Changes
 -------
 
-### Unreleased
+### v3.3-r1
 
 * 2017-11-23 - Removed support for Moodle pix icons.
 * 2017-11-23 - Small fix to prevent icons with target blank from being shown when they do not match the language setting.
