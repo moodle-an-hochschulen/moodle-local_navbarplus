@@ -109,9 +109,10 @@ function local_navbarplus_render_navbar_output() {
                                 break;
                             // Check for the optional fifth param: the target attribute.
                             case 4:
-                                if ($setting == 'true') {
+                                // Only set this value if the item is set to visible so far.
+                                // Especially to keep the language check.
+                                if ($setting == 'true' && $itemvisible == true) {
                                     $itemopeninnewwindow = true;
-                                    $itemvisible = true;
                                 }
                                 break;
                             // Check for optional sixth parameter: additional classes.

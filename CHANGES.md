@@ -6,7 +6,8 @@ Changes
 
 ### Unreleased
 
-* 2017-11-23 - Prepare compatibility for Moodle 3.3, no functionality change.
+* 2017-11-23 - Small fix to prevent icons with target blank from being shown when they do not match the language setting.
+* 2017-11-23 - Check compatibility for Moodle 3.3, no functionality change.
 * 2017-11-08 - Updated travis.yml to use newer node version for fixing TravisCI error.
 
 ### Release v3.2-r8
