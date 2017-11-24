@@ -52,3 +52,5 @@ Please note:
 $string['setting_resetusertours'] = 'Reset user tour link';
 $string['setting_resetusertours_desc'] = 'With this setting you can place a Font Awesome map icon in the navbar with which the user is able to restart the user tour for the current page. By default Boost places the link to reset the user tour within the footer. This might not be eye catching. With this setting you can place the link to the more visible navbar.<br/> If you want to change this icon, please have a look at the README.md file.';
 $string['resetusertours_hint'] = '(Could take a short time)';
+$string['setting_fa_usertours'] = 'Your icon name';
+$string['setting_fa_usertours_desc'] = 'Add your favorite icon name from <a href="http://fontawesome.io/icons/" target="_blank">Font Awesome..."</a> (Example: fa-map)';

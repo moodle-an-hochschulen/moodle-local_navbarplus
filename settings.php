@@ -43,7 +43,13 @@ if ($hassiteconfig) {
         $title = get_string('setting_resetusertours', 'local_navbarplus', null, true);
         $description = get_string('setting_resetusertours_desc', 'local_navbarplus', null, true);
         $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
-
+        $page->add($setting);
+        
+        // Setting for adding a self selected fa icon as user tours icon in the navbar.
+        $name = 'local_navbarplus/fa_usertours';
+        $title = get_string('setting_fa_usertours', 'local_navbarplus', null, true);
+        $description = get_string('setting_fa_usertours_desc', 'local_navbarplus', null, true);
+        $setting = new admin_setting_configtext($name, $title, $description,"fa-map",PARAM_NOTAGS, 50);
         $page->add($setting);
     }
 
