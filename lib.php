@@ -61,7 +61,7 @@ function local_navbarplus_render_navbar_output() {
             // Make a new array on delimiter "|".
             $settings = explode('|', $line);
             // Check for the mandatory conditions first.
-            // If array contains too less or too many items, do not proceed and therefore do not display the item.
+            // If array contains too less or too many settings, do not proceed and therefore do not display the item.
             // Furthermore check it at least the first three mandatory params are not an empty string.
             if (count($settings) >= 3 && count($settings) <= 7 &&
                 $settings[0] !== '' && $settings[1] !== '' && $settings[2] !== '') {
