@@ -71,14 +71,10 @@ function local_navbarplus_render_navbar_output() {
                         switch ($i) {
                             // Check for the mandatory first param: icon.
                             case 0:
-                                $moodlepixpattern = '~^[a-z]/[\w\d-_]+$~';
                                 $faiconpattern = '~^fa-[\w\d-]+$~';
-                                // Check if it's a Moodle pix icon.
-                                if (preg_match($moodlepixpattern, $setting) > 0) {
-                                    $itemicon = $OUTPUT->pix_icon($setting, '');
-                                    $itemvisible = true;
-                                } else if (preg_match($faiconpattern, $setting) > 0) { // Check if it's a Font Awesome icon.
-                                    $itemicon = '<i class="fa ' . $setting . '"></i>';
+                                // Check if it's matching the Font Awesome pattern.
+                                if (preg_match($faiconpattern, $setting) > 0) {
+                                    $itemicon = '<i class="fa ' . $setting . ' icon"></i>';
                                     $itemvisible = true;
                                 }
                                 break;

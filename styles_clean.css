@@ -3,3 +3,7 @@ header.navbar .localnavbarplus {
     line-height: 43px;
     padding-left: 10px;
 }
+
+header.navbar .localnavbarplus i.fa {
+    color: #999;
+}

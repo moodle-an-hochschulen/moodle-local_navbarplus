@@ -30,11 +30,11 @@ $string['setting_inserticonswithlinks'] = 'Icons with links';
 $string['setting_inserticonswithlinks_desc'] = 'With this setting you can add link icons to the header navbar left to the icons "messages" and "notifications".<br/>
 Each line consists of an icon image, a link URL, a text, supported language(s) (optional) and new window setting (optional) - separated by pipe characters. Each icon needs to be written in a new line.<br/>
 For example:<br/>
-a/help|http://moodle.org|Moodle|en,de|true|hidden-small-down<br/>
+fa-question|http://moodle.org|Moodle|en,de|true|hidden-small-down<br/>
 fa-sign-out|/login/logout.php|Logout||false<br/><br/>
 Further information to the parameters:
 <ul>
-<li><b>Image:</b> You can add identifiers for a Moodle icon from the pix folder (<a href="https://github.com/moodle/moodle/tree/master/pix">see the icon list on github.com</a>) or a Font Awesome icon identifier (<a href="http://fontawesome.io/icons/">See the icon list on fontawesome.io</a>). Font Awesome is not included in Boost from Moodle core, but there are some Boost child themes and other solutions from third parties which add Font Awesome support to Moodle.</li>
+<li><b>Image:</b> You can add Font Awesome icon identifiers (<a href="http://fontawesome.io/icons/">See the icon list on fontawesome.io</a>). Font Awesome is included in Moodle\'s core Clean and Boost themes since the version 3.3.</li>
 <li><b>Link:</b> The link target can be defined by a full web URL (e.g. https://moodle.org) or a relative path within your Moodle instance (e.g. /login/logout.php). </li>
 <li><b>Title:</b> This text will be written in the title and alt attributes of the icon.</li>
 <li><b>Supported language(s) (optional):</b> This setting can be used for displaying the link to users of the specified language only. Separate more than one supported language with commas. If the link should be displayed in all languages, then leave this field empty.</li>
@@ -50,7 +50,5 @@ Please note:
 </ul>';
 // Setting to place a link to be able to reset user tours.
 $string['setting_resetusertours'] = 'Reset user tour link';
-$string['setting_resetusertours_desc'] = 'With this setting you can place a Font Awesome map icon in the navbar with which the user is able to restart the user tour for the current page. By default Boost places the link to reset the user tour within the footer. This might not be eye cathing. With this settung you can place the link to the more visible navbar.<br/>
-Please note: <br/>
-As there is no even vaguely fitting icon in the Moodle core, we have no fallback for themes that do not implement Font Awesome (from Moodle 3.3 onwards this will be integrated into Moodle core). If you use such a theme this setting will have no affect.';
+$string['setting_resetusertours_desc'] = 'With this setting you can place a Font Awesome map icon in the navbar with which the user is able to restart the user tour for the current page. By default Boost places the link to reset the user tour within the footer. This might not be eye catching. With this setting you can place the link to the more visible navbar.<br/> If you want to change this icon, please have a look at the README.md file.';
 $string['resetusertours_hint'] = '(Could take a short time)';

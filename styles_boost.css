@@ -2,9 +2,3 @@
 header.navbar .localnavbarplus > a > img {
     margin-left: 0;
 }
-/* Style Font Awesome icons. */
-header.navbar .localnavbarplus i.fa {
-    color: #999;
-    font-size: 1.3rem;
-    vertical-align: middle;
-}

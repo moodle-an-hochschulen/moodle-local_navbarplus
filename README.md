@@ -44,12 +44,12 @@ With this setting you can add link icons to the header navbar left to the icons 
 Each line consists of an icon image, a link URL, a text, supported language(s) (optional) and new window setting (optional) - separated by pipe characters. Each icon needs to be written in a new line. For example:
 
 ```
-a/help|http://moodle.org|Moodle|en,de|true|hidden-small-down
+fa-question|http://moodle.org|Moodle|en,de|true|hidden-small-down
 fa-sign-out|/login/logout.php|Logout||false
 ```
 
 Further information to the parameters:
-* Image: You can add identifiers for a Moodle icon from the pix folder (<a href="https://github.com/moodle/moodle/tree/master/pix">see the icon list on github.com</a>) or a Font Awesome icon identifier (<a href="http://fontawesome.io/icons/">See the icon list on fontawesome.io</a>). Font Awesome is included in Moodle's core Clean and Boost theme since the version 3.3.
+* Image: You can add Font Awesome icon identifiers (<a href="http://fontawesome.io/icons/">See the icon list on fontawesome.io</a>). Font Awesome is included in Moodle's core Clean and Boost themes since the version 3.3.
 * Link: The link target can be defined by a full web URL (e.g. https://moodle.org) or a relative path within your Moodle instance (e.g. /login/logout.php).
 * Title: This text will be written in the title and alt attributes of the icon.
 * Supported language(s) (optional): This setting can be used for displaying the link to users of the specified language only. Separate more than one supported language with commas. If the link should be displayed in all languages, then leave this field empty.
