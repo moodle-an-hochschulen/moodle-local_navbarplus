@@ -74,7 +74,7 @@ function local_navbarplus_render_navbar_output() {
                                 $faiconpattern = '~^fa-[\w\d-]+$~';
                                 // Check if it's matching the Font Awesome pattern.
                                 if (preg_match($faiconpattern, $setting) > 0) {
-                                    $itemicon = '<i class="fa ' . $setting . ' icon"></i>';
+                                    $itemicon = '<i class="icon fa ' . $setting . ' fa-fw"></i>';
                                     $itemvisible = true;
                                 }
                                 break;
@@ -162,7 +162,7 @@ function local_navbarplus_render_navbar_output() {
                 $output .= html_writer::start_tag('div', array('class' => 'localnavbarplus nav-link',
                                                                'id'    => 'local_navbarplus_resetusertour'));
                 // Use the Font Awesome icon "map".
-                $itemicon = '<i class="fa fa-map"></i>';
+                $itemicon = '<i class="icon fa fa-map fa-fw"></i>';
                 // Use the string for resetting the tour.
                 $resetstring = get_string('resettouronpage', 'tool_usertours');
                 $resethint = get_string('resetusertours_hint', 'local_navbarplus');

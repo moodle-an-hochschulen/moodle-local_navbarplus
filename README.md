@@ -88,19 +88,25 @@ The purpose of the plugin is to place _only few_ important icons with links in t
 Icon colors
 -----------
 
-The icons will be added to the navbar with the default Moodle icon color (a light gray). You can change this either in your own CSS file or in the custom CSS or the Raw SCSS section in your theme. The Moodle pix icons can only be varied in their brightness by using the CSS filter command.
-
-Example for changing the brightness of the Moodle pix icon to white:
-```
-header.navbar .localnavbarplus img.icon {
-    filter: brightness(10);
-}
-```
+The icons will be added to the navbar with the default Moodle icon color. You can change this either in your own CSS file or in the custom CSS or the Raw SCSS section in your theme.
 
 Example for changing the color of the Font Awesome icon to white:
 ```
 header.navbar .localnavbarplus i.fa::before {
     color: #fff;
+}
+```
+
+
+Icon sizes
+-----------
+
+The icons inherit the default Moodle icon size. Unfortunately, not all Font Awesome icons are equal in their size, so the size of the added icons can vary in size from the existing Moodle icons. You can change the font size of the icons that differ in their size in your own CSS file or in the custom CSS or the Raw SCSS section in your theme.
+
+Example for increasing the font size for the logout icon used in the example above:
+```
+header.navbar .localnavbarplus .fa-sign-out {
+    font-size: 19px;
 }
 ```
 
