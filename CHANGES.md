@@ -4,6 +4,10 @@ moodle-local_navbarplus
 Changes
 -------
 
+### Unreleased 
+
+* 2017-12-21- Check compatibility for Moodle 3.4, no functionality change.
+
 ### v3.3-r2
 
 * 2017-12-15 - Improved HTML structure for the icons.
