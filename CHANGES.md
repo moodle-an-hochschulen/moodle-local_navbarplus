@@ -4,6 +4,10 @@ moodle-local_navbarplus
 Changes
 -------
 
+### Unreleased 
+
+* 2018-02-22 - Added further information to the README.md.
+
 ### v3.4-r1
 
 * 2017-12-21- Check compatibility for Moodle 3.4, no functionality change.
