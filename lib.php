@@ -130,7 +130,7 @@ function local_navbarplus_render_navbar_output() {
                 $linkattributes = array('alt' => $itemtitle, 'title' => $itemtitle);
                 // If optional param for itemopeninnewwindow is set to true add a target=_blank to the link.
                 if ($itemopeninnewwindow) {
-                    $attributes['target'] = '_blank';
+                    $linkattributes['target'] = '_blank';
                 }
                 // Define classes for all icons.
                 $itemclasses = 'localnavbarplus nav-link';
