@@ -4,7 +4,7 @@ moodle-local_navbarplus
 Changes
 -------
 
-### Unreleased 
+### Release v3.4-r2
 
 * 2018-03-05 - Fixed Bug for openinnewwindow feature.
 * 2018-02-22 - Added further information to the README.md.
