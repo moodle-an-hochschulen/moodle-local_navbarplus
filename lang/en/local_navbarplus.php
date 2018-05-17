@@ -25,6 +25,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 $string['pluginname'] = 'Navbar Plus';
+$string['privacy:metadata'] = 'The Navbar Plus plugin provides extended functionality to Moodle users, but does not store any personal data.';
 // Setting to insert icons with links.
 $string['setting_inserticonswithlinks'] = 'Icons with links';
 $string['setting_inserticonswithlinks_desc'] = 'With this setting you can add link icons to the header navbar left to the icons "messages" and "notifications".<br/>
