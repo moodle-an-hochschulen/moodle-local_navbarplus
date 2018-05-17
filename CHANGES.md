@@ -4,7 +4,7 @@ moodle-local_navbarplus
 Changes
 -------
 
-### Unreleased
+### Release v3.4-r3
 
 * 2018-05-16 - Implement Privacy API.
 
