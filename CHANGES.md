@@ -13,16 +13,16 @@ Changes
 * 2018-03-05 - Fixed Bug for openinnewwindow feature.
 * 2018-02-22 - Added further information to the README.md.
 
-### v3.4-r1
+### Release v3.4-r1
 
 * 2017-12-21- Check compatibility for Moodle 3.4, no functionality change.
 
-### v3.3-r2
+### Release v3.3-r2
 
 * 2017-12-15 - Improved HTML structure for the icons.
 * 2017-12-05 - Added Workaround to travis.yml for fixing Behat tests with TravisCI.
 
-### v3.3-r1
+### Release v3.3-r1
 
 * 2017-11-23 - Removed support for Moodle pix icons.
 * 2017-11-23 - Small fix to prevent icons with target blank from being shown when they do not match the language setting.
