@@ -4,7 +4,7 @@ moodle-local_navbarplus
 Changes
 -------
 
-### Unreleased
+### Release v3.5-r1
 
 * 2018-05-24 - Changed setting description and README due to changes in referred Bootstrap classes.
 * 2018-05-24 - Changed CSS selectors due to changes in Boost. IMPORTANT: Theme clean is no longer supported!
