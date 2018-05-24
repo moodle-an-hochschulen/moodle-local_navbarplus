@@ -6,6 +6,7 @@ Changes
 
 ### Unreleased
 
+* 2018-05-24 - Changed CSS selectors due to changes in Boost. IMPORTANT: Theme clean is no longer supported!
 * 2018-05-24 - Check compatibility for Moodle 3.5, no functionality change.
 
 ### Release v3.4-r3
