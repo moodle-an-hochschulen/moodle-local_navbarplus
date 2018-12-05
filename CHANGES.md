@@ -4,6 +4,10 @@ moodle-local_navbarplus
 Changes
 -------
 
+### Unreleased
+
+* 2018-12-05 - Changed travis.yml due to upstream changes.
+
 ### Release v3.5-r1
 
 * 2018-05-24 - Changed setting description and README due to changes in referred Bootstrap classes.
