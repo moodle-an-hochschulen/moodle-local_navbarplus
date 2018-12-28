@@ -153,7 +153,7 @@ function local_navbarplus_render_navbar_output() {
         }
     }
     // If setting resetuseertours is enabled.
-    if (isset($config->resetusertours)) {
+    if (isset($config->resetusertours) && $config->resetusertours == true) {
         if (isloggedin() || !isguestuser()) {
             // Get the tour for the current page.
             $tour = \tool_usertours\manager::get_current_tour();
