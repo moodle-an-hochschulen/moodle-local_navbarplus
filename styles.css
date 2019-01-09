@@ -10,7 +10,7 @@
 }
 
 /* Do not display the icon if a user has disabled Javascript in his browser. */
-body:not(.jsenabled) #local_navbarplus_resetusertour {
+body:not(.jsenabled) #localnavbarplus-resetusertour {
     display: none;
 }
 

@@ -70,7 +70,7 @@ Please note:
 
 If you want to change this icon, you can do this within your own Custom CSS / RAW SCSS section of your theme. This is the CSS code you need:
 ```
-#local_navbarplus_resetusertour i.fa::before {
+#localnavbarplus-resetusertour i.fa::before {
    content: "\f11d";
 }
 ```

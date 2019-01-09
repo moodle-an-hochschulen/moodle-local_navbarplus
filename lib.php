@@ -160,7 +160,7 @@ function local_navbarplus_render_navbar_output() {
             if (!empty($tour)) {
                 // Open div.
                 $output .= html_writer::start_tag('div', array('class' => 'localnavbarplus nav-link',
-                                                               'id'    => 'local_navbarplus_resetusertour'));
+                                                               'id'    => 'localnavbarplus-resetusertour'));
                 // Use the Font Awesome icon "map".
                 $itemicon = '<i class="icon fa fa-map fa-fw"></i>';
                 // Use the string for resetting the tour.
