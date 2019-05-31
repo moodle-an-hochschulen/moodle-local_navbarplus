@@ -35,7 +35,7 @@ fa-question|http://moodle.org|Moodle|en,de|true|d-none d-sm-block<br/>
 fa-sign-out|/login/logout.php|Logout||false<br/><br/>
 Further information to the parameters:
 <ul>
-<li><b>Image:</b> You can add Font Awesome icon identifiers (<a href="http://fontawesome.io/icons/">See the icon list on fontawesome.io</a>). Font Awesome is included in Moodle\'s core Clean and Boost themes since the version 3.3.</li>
+<li><b>Image:</b> You can add Font Awesome icon identifiers (<a href="https://fontawesome.com/v4.7.0/icons/">See the icon list on fontawesome.com</a>). Font Awesome is included in Moodle\'s core Clean and Boost themes since the version 3.3.</li>
 <li><b>Link:</b> The link target can be defined by a full web URL (e.g. https://moodle.org) or a relative path within your Moodle instance (e.g. /login/logout.php). </li>
 <li><b>Title:</b> This text will be written in the title and alt attributes of the icon.</li>
 <li><b>Supported language(s) (optional):</b> This setting can be used for displaying the link to users of the specified language only. Separate more than one supported language with commas. If the link should be displayed in all languages, then leave this field empty.</li>
