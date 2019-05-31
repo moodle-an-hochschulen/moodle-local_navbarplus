@@ -4,7 +4,7 @@ moodle-local_navbarplus
 Changes
 -------
 
-### Unreleased
+### Release v3.6-r2
 
 * 2019-05-31 - Target link to FontAwesome icon list to FontAwesome 4.7.0 which is still used by Moodle core.
 

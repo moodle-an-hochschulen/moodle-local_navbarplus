@@ -25,7 +25,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'local_navbarplus';
-$plugin->version = 2019011600;
-$plugin->release = 'v3.6-r1';
+$plugin->version = 2019053100;
+$plugin->release = 'v3.6-r2';
 $plugin->requires = 2018120300;
 $plugin->maturity = MATURITY_STABLE;
