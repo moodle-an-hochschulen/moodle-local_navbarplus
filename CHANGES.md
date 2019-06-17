@@ -4,6 +4,10 @@ moodle-local_navbarplus
 Changes
 -------
 
+### Unreleased
+
+* 2019-06-17 - Prepare compatibility for Moodle 3.7.
+
 ### Release v3.6-r3
 
 * 2019-06-19 - Fixed bug that added id attribute to all other items.
