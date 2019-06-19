@@ -57,6 +57,7 @@ function local_navbarplus_render_navbar_output() {
             $itemvisible = false;
             $itemopeninnewwindow = false;
             $itemadditionalclasses = null;
+            $itemid = null;
 
             // Make a new array on delimiter "|".
             $settings = explode('|', $line);
@@ -139,6 +140,7 @@ function local_navbarplus_render_navbar_output() {
                     $itemclasses .= ' ' . $itemadditionalclasses;
                 }
                 // Initialise attribute array for the div tag.
+                $divattributes = [];
                 $divattributes['class'] = $itemclasses;
                 // Add optional individual id prefixed with plugin name.
                 if (!empty($itemid)) {
@@ -149,7 +151,6 @@ function local_navbarplus_render_navbar_output() {
                 $output .= html_writer::link($itemurl, $itemicon, $linkattributes);
                 $output .= html_writer::end_tag('div');
             }
-
         }
     }
     // If setting resetuseertours is enabled.

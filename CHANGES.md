@@ -4,6 +4,10 @@ moodle-local_navbarplus
 Changes
 -------
 
+### Unreleased
+
+* 2019-06-19 - Fixed bug that added id attribute to all other items.
+
 ### Release v3.6-r2
 
 * 2019-05-31 - Target link to FontAwesome icon list to FontAwesome 4.7.0 which is still used by Moodle core.
