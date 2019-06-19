@@ -52,6 +52,7 @@ function local_navbarplus_render_navbar_output() {
             }
 
             $itemicon = null;
+            $iconfaidentifier = null;
             $itemurl = null;
             $itemtitle = null;
             $itemvisible = false;
@@ -75,7 +76,7 @@ function local_navbarplus_render_navbar_output() {
                                 $faiconpattern = '~^fa-[\w\d-]+$~';
                                 // Check if it's matching the Font Awesome pattern.
                                 if (preg_match($faiconpattern, $setting) > 0) {
-                                    $itemicon = '<i class="icon fa ' . $setting . ' fa-fw"></i>';
+                                    $iconfaidentifier = $setting;
                                     $itemvisible = true;
                                 }
                                 break;
@@ -127,8 +128,10 @@ function local_navbarplus_render_navbar_output() {
             // Add link with icon as a child to the surrounding div only if it should be displayed.
             // This is if all mandatory params are set and the item matches the optional given language setting.
             if ($itemvisible) {
+                // To address accessibility, we need to define the icon here because the title from the next pipe is needed.
+                $itemicon = '<i class="icon fa ' . $iconfaidentifier . ' fa-fw" aria-label="' . $itemtitle . '"></i>';
                 // Set attributes for title and alt.
-                $linkattributes = array('alt' => $itemtitle, 'title' => $itemtitle);
+                $linkattributes = array('title' => $itemtitle);
                 // If optional param for itemopeninnewwindow is set to true add a target=_blank to the link.
                 if ($itemopeninnewwindow) {
                     $linkattributes['target'] = '_blank';

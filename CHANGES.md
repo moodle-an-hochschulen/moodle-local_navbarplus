@@ -6,6 +6,7 @@ Changes
 
 ### Unreleased
 
+* 2019-06-17 - Improved accessibility for the icons.
 * 2019-06-17 - Prepare compatibility for Moodle 3.7.
 
 ### Release v3.6-r3
