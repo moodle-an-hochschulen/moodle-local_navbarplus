@@ -4,7 +4,7 @@ moodle-local_navbarplus
 Changes
 -------
 
-### Unreleased
+### Release v3.7-r1
 
 * 2019-06-19 - Added Behat tests.
 * 2019-06-17 - Improved accessibility for the icons.
