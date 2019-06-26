@@ -55,14 +55,14 @@ Feature: Configuring the navbarplus plugin
     And I navigate to "Appearance > Navbar Plus" in site administration
     And I set the field "id_s_local_navbarplus_inserticonswithlinks" to "fa-glass|/?redirect=0|Classtest|||optional-class"
     And I press "Save"
-    Then I should see the icon with the title "Classtest" and the optional class "optional-class" in the navbar
+    Then I should see the icon with the title "Classtest" and the class "optional-class" in the navbar
 
   Scenario: Configuring item with additional id attribute
     When I log in as "admin"
     And I navigate to "Appearance > Navbar Plus" in site administration
     And I set the field "id_s_local_navbarplus_inserticonswithlinks" to "fa-id-card|/?redirect=0|Idtest||||optional-id"
     And I press "Save"
-    Then I should see the icon with the title "Idtest" and the optional id "optional-id" in the navbar
+    Then I should see the icon with the title "Idtest" and the id "optional-id" in the navbar
 
   Scenario: Enabling the link to show the reset users tour link in the navbar if a user tour is created for that page
     When I log in as "admin"

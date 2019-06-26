@@ -167,7 +167,7 @@ class behat_local_navbarplus extends behat_base {
      * Checks, that the specified element is existent and has additional classes attribute.
      *
      * @codingStandardsIgnoreLine
-     * @Then /^I should see the icon with the title "(?P<title_string>(?:[^"]|\\")*)" and the optional class "(?P<class_string>(?:[^"]|\\")*)" in the navbar$/
+     * @Then /^I should see the icon with the title "(?P<title_string>(?:[^"]|\\")*)" and the class "(?P<class_string>(?:[^"]|\\")*)" in the navbar$/
      *
      * @param string $title
      * @param string $class
@@ -189,7 +189,7 @@ class behat_local_navbarplus extends behat_base {
      * Checks, that the specified element is existent and has additional id attribute.
      *
      * @codingStandardsIgnoreLine
-     * @Then /^I should see the icon with the title "(?P<title_string>(?:[^"]|\\")*)" and the optional id "(?P<id_string>(?:[^"]|\\")*)" in the navbar$/
+     * @Then /^I should see the icon with the title "(?P<title_string>(?:[^"]|\\")*)" and the id "(?P<id_string>(?:[^"]|\\")*)" in the navbar$/
      *
      * @param string $title
      * @param string $id

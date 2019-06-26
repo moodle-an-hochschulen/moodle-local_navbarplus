@@ -4,6 +4,10 @@ moodle-local_navbarplus
 Changes
 -------
 
+### Unreleased 
+
+* 2019-06-26 - Removed the optional aspect from the behat tests scenarios.
+
 ### Release v3.7-r1
 
 * 2019-06-19 - Added Behat tests.
