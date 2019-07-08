@@ -1,4 +1,11 @@
 @local @local_navbarplus
+  # Please note:
+  # The short notation for the settings like
+  #     Given the following config values are set as admin:
+  #      | config               | value                                  | plugin           |
+  #      | inserticonswithlinks | fa-sign-out|/login/logout.php|Logout   | local_navbarplus |
+  # does not work here, as the value contains pipe characters and so the table does not have same number of columns in every row.
+  # Escaping the pipes with backslash helped, but then the tests failed because the value is not usable anymore.
 Feature: Configuring the navbarplus plugin
   In order to have custom items in the additional navbar
   As admin
