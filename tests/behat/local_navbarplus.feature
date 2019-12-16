@@ -12,16 +12,16 @@ Feature: Configuring the navbarplus plugin
   I need to be able to configure the navbarplus plugin
 
   Background:
-    And the following "users" exist:
+    Given the following "users" exist:
       | username | lang |
       | student1 | de   |
 
   Scenario: Configuring item with mandatory attributes
     When I log in as "admin"
-    When I navigate to "Appearance > Navbar Plus" in site administration
+    And I navigate to "Appearance > Navbar Plus" in site administration
     And I set the field "id_s_local_navbarplus_inserticonswithlinks" to "fa-sign-out|/login/logout.php|Logout"
     And I press "Save"
-    And I should see the icon with the title "Logout" and the iconclass "fa-sign-out" and the link "/login/logout.php" in the navbar
+    Then I should see the icon with the title "Logout" and the iconclass "fa-sign-out" and the link "/login/logout.php" in the navbar
 
   Scenario: Configuring item with less than mandatory attributes
     When I log in as "admin"
