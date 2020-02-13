@@ -1,12 +1,14 @@
-/* Float the icons right to be placed next to the existing icons "messages" and "notifications". */
+/* Float the icons left to be placed next to the existing icons "messages" and "notifications". */
 .navbar .localnavbarplus.nav-link {
-    float: right;
-    margin-left: 0;
+    float: left;
 }
 
-/* Remove the padding from the icons placed here to achieve the same margins for moodle and navbarplus icons. */
+/* Remove the right margin from each but the last icon to achieve the same margins for moodle and navbarplus icons. */
 .navbar .localnavbarplus.nav-link .icon {
     margin-right: 0;
+}
+.navbar .localnavbarplus.nav-link:last-child .icon {
+    margin-right: .5rem;
 }
 
 /* Do not display the icon if a user has disabled Javascript in his browser. */

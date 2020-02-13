@@ -41,8 +41,8 @@ function local_navbarplus_render_navbar_output() {
 
     // Make a new array on delimiter "new line".
     if (isset($config->inserticonswithlinks)) {
-        // Reverse the array because the icons are floated right and would be displayed in the wrong sequence otherwise.
-        $lines = array_reverse(explode("\n", $config->inserticonswithlinks));
+        // Get the lines from the config.
+        $lines = explode("\n", $config->inserticonswithlinks);
 
         // Parse item settings.
         foreach ($lines as $line) {

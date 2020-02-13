@@ -71,6 +71,13 @@ Feature: Configuring the navbarplus plugin
     And I press "Save"
     Then I should see the icon with the title "Idtest" and the id "optional-id" in the navbar
 
+  Scenario: Verifying the icon position
+    When I log in as "admin"
+    When I navigate to "Appearance > Navbar Plus" in site administration
+    And I set the field "id_s_local_navbarplus_inserticonswithlinks" to "fa-sign-out|/login/logout.php|Logout"
+    And I press "Save"
+    Then "div.localnavbarplus.nav-link" "css_element" should appear after "div[data-region='popover-region-messages']" "css_element"
+
   Scenario: Enabling the link to show the reset users tour link in the navbar if a user tour is created for that page
     When I log in as "admin"
     And I navigate to "Appearance > Navbar Plus" in site administration
