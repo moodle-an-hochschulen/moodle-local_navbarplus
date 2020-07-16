@@ -4,6 +4,10 @@ moodle-local_navbarplus
 Changes
 -------
 
+### Unreleased
+
+* 2020-07-16 - Prepare compatibility for Moodle 3.9.
+
 ### Release v3.8-r1
 
 * 2020-02-18 - Prepare compatibility for Moodle 3.8.
