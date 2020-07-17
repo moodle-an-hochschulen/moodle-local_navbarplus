@@ -11,11 +11,6 @@ Feature: Configuring the navbarplus plugin
   As admin
   I need to be able to configure the navbarplus plugin
 
-  Background:
-    Given the following "users" exist:
-      | username | lang |
-      | student1 | de   |
-
   Scenario: Configuring item with mandatory attributes
     When I log in as "admin"
     And I navigate to "Appearance > Navbar Plus" in site administration
@@ -31,6 +26,9 @@ Feature: Configuring the navbarplus plugin
     And I should not see the icon with the title "Falsetest" in the navbar
 
   Scenario: Configuring item with additional language attribute
+    Given the following "users" exist:
+      | username |
+      | student1 |
     When I log in as "admin"
     And I navigate to "Language > Language packs" in site administration
     And I set the field "Available language packs" to "de"
@@ -41,6 +39,10 @@ Feature: Configuring the navbarplus plugin
     Then I should not see the icon with the title "Languagetest" and the iconclass "fa-language" and the link "/?redirect=0" in the navbar
     And I log out
     When I log in as "student1"
+    And I follow "Preferences" in the user menu
+    And I click on "Preferred language" "link"
+    And I set the field "Preferred language" to "Deutsch ‎(de)‎"
+    And I press "Save changes"
     Then I should see the icon with the title "Languagetest" and the iconclass "fa-language" and the link "/?redirect=0" in the navbar
 
   Scenario: Configuring item with the new window attribute
