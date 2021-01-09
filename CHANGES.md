@@ -4,7 +4,7 @@ moodle-local_navbarplus
 Changes
 -------
 
-### Unreleased
+### Release v3.10-r1
 
 * 2021-01-09 - Fix function call to get user tours which was renamed in 3.10 with MDL-69739 - Thanks to Leon Stringer.
 * 2021-01-09 - Prepare compatibility for Moodle 3.10.
