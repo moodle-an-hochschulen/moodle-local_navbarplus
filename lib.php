@@ -160,7 +160,7 @@ function local_navbarplus_render_navbar_output() {
     if (isset($config->resetusertours) && $config->resetusertours == true) {
         if (isloggedin() || !isguestuser()) {
             // Get the tour for the current page.
-            $tour = \tool_usertours\manager::get_current_tour();
+            $tour = \tool_usertours\manager::get_current_tours();
             if (!empty($tour)) {
                 // Open div.
                 $output .= html_writer::start_tag('div', array('class' => 'localnavbarplus nav-link',
