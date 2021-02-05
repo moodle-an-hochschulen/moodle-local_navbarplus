@@ -4,6 +4,10 @@ moodle-local_navbarplus
 Changes
 -------
 
+### Unreleased
+
+* 2021-02-05 - Move Moodle Plugin CI from Travis CI to Github actions
+
 ### Release v3.10-r1
 
 * 2021-01-09 - Fix function call to get user tours which was renamed in 3.10 with MDL-69739 - Thanks to Leon Stringer.
