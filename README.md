@@ -1,7 +1,7 @@
 moodle-local_navbarplus
 ========================
 
-[![Build Status](https://travis-ci.com/moodleuulm/moodle-local_navbarplus.svg?branch=master)](https://travis-ci.com/moodleuulm/moodle-local_navbarplus)
+[![Moodle Plugin CI](https://github.com/moodleuulm/moodle-local_navbarplus/workflows/Moodle%20Plugin%20CI/badge.svg?branch=MOODLE_310_STABLE)](https://github.com/moodleuulm/moodle-local_navbarplus/actions?query=workflow%3A%22Moodle+Plugin+CI%22+branch%3AMOODLE_310_STABLE)
 
 Moodle plugin which enhances the functionality of Moodle's page header navbar.
 
