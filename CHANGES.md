@@ -4,7 +4,7 @@ moodle-local_navbarplus
 Changes
 -------
 
-### Unreleased
+### v3.11-r1
 
 * 2021-12-04 - Prepare compatibility for Moodle 3.11
 
