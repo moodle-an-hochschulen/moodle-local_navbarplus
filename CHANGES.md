@@ -4,6 +4,10 @@ moodle-local_navbarplus
 Changes
 -------
 
+### Unreleased
+
+* 2021-12-04 - Add noopener and noreferrer when opening links in a new window - Thanks to Indrajit Raychaudhuri.
+
 ### v3.9-r3
 
 * 2021-02-05 - Make codechecker fully happy
