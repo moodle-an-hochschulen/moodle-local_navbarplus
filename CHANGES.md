@@ -4,7 +4,7 @@ moodle-local_navbarplus
 Changes
 -------
 
-### Unreleased
+### v3.9-r4
 
 * 2021-12-04 - Add noopener and noreferrer when opening links in a new window - Thanks to Indrajit Raychaudhuri.
 
