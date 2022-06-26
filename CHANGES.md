@@ -4,7 +4,7 @@ moodle-local_navbarplus
 Changes
 -------
 
-### Unreleased
+### v3.11-r2
 
 * 2022-06-26 - Updated Moodle Plugin CI to latest upstream recommendations
 * 2022-06-26 - Make codechecker happy again
