@@ -1,7 +1,7 @@
 moodle-local_navbarplus
 ========================
 
-[![Moodle Plugin CI](https://github.com/moodleuulm/moodle-local_navbarplus/workflows/Moodle%20Plugin%20CI/badge.svg?branch=MOODLE_310_STABLE)](https://github.com/moodleuulm/moodle-local_navbarplus/actions?query=workflow%3A%22Moodle+Plugin+CI%22+branch%3AMOODLE_310_STABLE)
+[![Moodle Plugin CI](https://github.com/moodle-an-hochschulen/moodle-local_navbarplus/workflows/Moodle%20Plugin%20CI/badge.svg?branch=MOODLE_310_STABLE)](https://github.com/moodle-an-hochschulen/moodle-local_navbarplus/actions?query=workflow%3A%22Moodle+Plugin+CI%22+branch%3AMOODLE_310_STABLE)
 
 Moodle plugin which enhances the functionality of Moodle's page header navbar.
 
@@ -55,7 +55,7 @@ Further information to the parameters:
 * Supported language(s) (optional): This setting can be used for displaying the link to users of the specified language only. Separate more than one supported language with commas. If the link should be displayed in all languages, then leave this field empty.
 * New window (optional): By default the link will be opened in the same window and the value of this setting is set to false. If you want to open the link in a new window set the value to true.
 * Additional classes (optional): You can add individual classes with this optional parameter. A common use case might be to add Bootstrap's responsive classes to hide an icon for specific display sizes. <br/> You can look up the definitions for the responsive Bootstrap display classes for <a href="https://getbootstrap.com/docs/4.0/utilities/display/">Bootstrap version 4</a> for all Boost based themes.
-The most important classes for Boost based themes might be "d-none d-sm-block" for hiding an icon on small devices or "d-sm-none" for only displaying the icon on small screens.
+  The most important classes for Boost based themes might be "d-none d-sm-block" for hiding an icon on small devices or "d-sm-none" for only displaying the icon on small screens.
 * ID (optional): You can add an individual ID to your icon element. This makes it possible to address this specific icon easily with CSS (for example for the Moodle user tours). The string you enter here will always be prefixed with "localnavbarplus-".
 
 Please note:
@@ -133,7 +133,7 @@ This plugin is published and regularly updated in the Moodle plugins repository:
 http://moodle.org/plugins/view/local_navbarplus
 
 The latest development version can be found on Github:
-https://github.com/moodleuulm/moodle-local_navbarplus
+https://github.com/moodle-an-hochschulen/moodle-local_navbarplus
 
 
 Bug and problem reports / Support requests
@@ -142,7 +142,7 @@ Bug and problem reports / Support requests
 This plugin is carefully developed and thoroughly tested, but bugs and problems can always appear.
 
 Please report bugs and problems on Github:
-https://github.com/moodleuulm/moodle-local_navbarplus/issues
+https://github.com/moodle-an-hochschulen/moodle-local_navbarplus/issues
 
 We will do our best to solve your problems, but please note that due to limited resources we can't always provide per-case support.
 
@@ -153,10 +153,10 @@ Feature proposals
 Due to limited resources, the functionality of this plugin is primarily implemented for our own local needs and published as-is to the community. We are aware that members of the community will have other needs and would love to see them solved by this plugin.
 
 Please issue feature proposals on Github:
-https://github.com/moodleuulm/moodle-local_navbarplus/issues
+https://github.com/moodle-an-hochschulen/moodle-local_navbarplus/issues
 
 Please create pull requests on Github:
-https://github.com/moodleuulm/moodle-local_navbarplus/pulls
+https://github.com/moodle-an-hochschulen/moodle-local_navbarplus/pulls
 
 We are always interested to read about your feature proposals or even get a pull request from you, but please accept that we can handle your issues only as feature _proposals_ and not as feature _requests_.
 
@@ -188,23 +188,28 @@ This plugin has not been tested with Moodle's support for right-to-left (RTL) la
 If you want to use this plugin with a RTL language and it doesn't work as-is, you are free to send us a pull request on Github with modifications.
 
 
-PHP7 Support
-------------
-
-Since Moodle 3.4 core, PHP7 is mandatory. We are developing and testing this plugin for PHP7 only.
-
-
 Maintainers
 -----------
 
-Ulm University\
-Communication and Information Centre (kiz)\
-Alexander Bias
+The plugin is maintained by\
+Moodle an Hochschulen e.V.
 
 
 Copyright
 ---------
 
+The copyright of this plugin is held by\
+Moodle an Hochschulen e.V.
+
+Individual copyrights of individual developers are tracked in PHPDoc comments and Git commits.
+
+
+Copyright history
+-----------------
+
+This plugin was initially built, maintained and published by\
 Ulm University\
 Communication and Information Centre (kiz)\
-Kathrin Osswald
+Alexander Bias and Kathrin Osswald
+
+It was contributed to the Moodle an Hochschulen e.V. plugin catalogue in 2022.
