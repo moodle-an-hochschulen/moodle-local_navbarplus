@@ -4,6 +4,10 @@ moodle-local_navbarplus
 Changes
 -------
 
+### Unreleased
+
+* 2022-07-10 - Add Capabilities section to README.md
+
 ### v3.10-r4
 
 * 2022-06-26 - Updated Moodle Plugin CI to latest upstream recommendations
