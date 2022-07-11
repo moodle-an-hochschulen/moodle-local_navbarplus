@@ -85,6 +85,12 @@ If you want to hide the footer link to reset the user tour, you can add the foll
 The theme <a href ="https://moodle.org/plugins/theme_boost_campus">Boost Campus</a> implements a own setting to hide the standard link to reset the user tour.
 
 
+Capabilities
+------------
+
+This plugin does not add any additional capabilities.
+
+
 How this plugin works / Pitfalls
 --------------------------------
 
