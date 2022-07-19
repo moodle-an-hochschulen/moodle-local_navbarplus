@@ -6,6 +6,7 @@ Changes
 
 ### Unreleased
 
+* 2022-07-12 - Change d-*-block classes to d-*-flex classes in the settings and language pack for Moodle 4.0.
 * 2022-07-12 - Fix Behat tests which broke with Moodle 4.0.
 * 2022-07-12 - Prepare compatibility for Moodle 4.0.
 
