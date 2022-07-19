@@ -169,9 +169,13 @@ function local_navbarplus_render_navbar_output() {
                 // Use the string for resetting the tour.
                 $resetstring = get_string('resettouronpage', 'tool_usertours');
                 $resethint = get_string('resetusertours_hint', 'local_navbarplus');
-                // Set this as the alt and title attribute and set the data action for resetting the tour.
+                // Set the alt and title attribute and set the id for resetting the tour as well.
+                // Before Moodle 4.0, the click handler for the reset user tours link was registered with a
+                // data-action attribute. However, in Moodle 4.0 the click handler is looking for the id
+                // of the link. Unfortunately, if we set the id for this link to 'resetpagetour', we have
+                // a duplicate id in the document. We are sorry for that, but we accept it as unavoidable.
                 $attributes = array('alt' => $resetstring, 'title' => $resetstring . ' ' . $resethint,
-                                    'data-action' => 'tool_usertours/resetpagetour');
+                                    'id' => 'resetpagetour');
                 // Add the link to the HTML.
                 $output .= html_writer::link('#', $itemicon, $attributes);
                 // Close div.

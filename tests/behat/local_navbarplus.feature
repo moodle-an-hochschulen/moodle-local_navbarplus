@@ -85,6 +85,9 @@ Feature: Configuring the navbarplus plugin
     And I press "Save"
     Then "div.localnavbarplus.nav-link" "css_element" should appear after "div[data-region='popover-region-messages']" "css_element"
 
+  # The steps to create and use the tour were copied from the @tool_usertours Behat feature.
+  # This scenario just differs in the aspect which button is used to reset the tour.
+  @javascript
   Scenario: Enabling the link to show the reset users tour link in the navbar if a user tour is created for that page
     When I log in as "admin"
     And I navigate to "Appearance > Navbar Plus" in site administration
@@ -98,7 +101,28 @@ Feature: Configuring the navbarplus plugin
     And I add steps to the "First tour" tour:
       | targettype                | Title   | id_content                                                                                                                     | Content type   |
       | Display in middle of page | Welcome | Welcome to your personal learning space. We'd like to give you a quick tour to show you some of the areas you may find helpful | Manual         |
+    And I add steps to the "First tour" tour:
+      | targettype | targetvalue_block | Title    | id_content                                                                    | Content type   |
+      | Block      | Timeline          | Timeline | This is the Timeline. All of your upcoming activities can be found here       | Manual         |
+      | Block      | Calendar          | Calendar | This is the Calendar. All of your assignments and due dates can be found here | Manual         |
+    And I add steps to the "First tour" tour:
+      | targettype | targetvalue_selector | Title     | id_content                                                                                         | Content type   |
+      | Selector   | .usermenu            | User menu | This is your personal user menu. You'll find your personal preferences and your user profile here. | Manual         |
     When I am on homepage
-    Then I should see the icon with the title "Reset user tour on this page (Could take a short time)" in the navbar
-    When I am on site homepage
-    Then I should not see the icon with the title "Reset user tour on this page (Could take a short time)" in the navbar
+    Then I should see "Welcome to your personal learning space. We'd like to give you a quick tour to show you some of the areas you may find helpful"
+    And I click on "Next" "button" in the "[data-role='flexitour-step']" "css_element"
+    And I should see "This is the Timeline. All of your upcoming activities can be found here"
+    And I should not see "This is the Calendar. All of your assignments and due dates can be found here"
+    And I click on "Next" "button" in the "[data-role='flexitour-step']" "css_element"
+    And I should see "This is the Calendar. All of your assignments and due dates can be found here"
+    And I should not see "This area shows you what's happening in some of your courses"
+    And I click on "Skip tour" "button" in the "[data-role='flexitour-step']" "css_element"
+    And I should not see "This area shows you what's happening in some of your courses"
+    And I am on homepage
+    And I should not see "Welcome to your personal learning space. We'd like to give you a quick tour to show you some of the areas you may find helpful"
+    And I should see the icon with the title "Reset user tour on this page (Could take a short time)" in the navbar
+    And I click on "#localnavbarplus-resetusertour #resetpagetour" "css_element"
+    And I should see "Welcome to your personal learning space. We'd like to give you a quick tour to show you some of the areas you may find helpful"
+    And I click on "Skip tour" "button" in the "[data-role='flexitour-step']" "css_element"
+    And I am on site homepage
+    And I should not see the icon with the title "Reset user tour on this page (Could take a short time)" in the navbar
