@@ -1,7 +1,7 @@
 moodle-local_navbarplus
 ========================
 
-[![Moodle Plugin CI](https://github.com/moodle-an-hochschulen/moodle-local_navbarplus/workflows/Moodle%20Plugin%20CI/badge.svg?branch=master)](https://github.com/moodle-an-hochschulen/moodle-local_navbarplus/actions?query=workflow%3A%22Moodle+Plugin+CI%22+branch%3Amaster)
+[![Moodle Plugin CI](https://github.com/moodle-an-hochschulen/moodle-local_navbarplus/workflows/Moodle%20Plugin%20CI/badge.svg?branch=MOODLE_400_STABLE)](https://github.com/moodle-an-hochschulen/moodle-local_navbarplus/actions?query=workflow%3A%22Moodle+Plugin+CI%22+branch%3AMOODLE_400_STABLE)
 
 Moodle plugin which enhances the functionality of Moodle's page header navbar.
 
