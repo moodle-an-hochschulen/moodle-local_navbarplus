@@ -4,7 +4,7 @@ moodle-local_navbarplus
 Changes
 -------
 
-### Unreleased
+### v4.0-r1
 
 * 2022-07-12 - Fix the "Reset user tour" mechanism which broke with Moodle 4.0.
 * 2022-07-12 - Change d-*-block classes to d-*-flex classes in the settings and language pack for Moodle 4.0.
