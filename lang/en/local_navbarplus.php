@@ -43,6 +43,7 @@ Further information to the parameters:
 <li><b>Additional classes (optional)</b>: You can add individual classes with this optional parameter. A common use case might be to add Bootstrap\'s responsive classes to hide an icon for specific display sizes. <br/> You can look up the definitions for the responsive Bootstrap display classes for <a href="https://getbootstrap.com/docs/4.0/utilities/display/">Bootstrap version 4</a> for all Boost based themes.<br/>
 The most important classes for Boost based themes might be "d-none d-sm-flex" for hiding an icon on small devices or "d-sm-none" for only displaying the icon on small screens.
 <li><b>ID (optional)</b>: You can add an individual ID to your icon element. This makes it possible to address this specific icon easily with CSS (for example for the Moodle user tours). The string you enter here will always be prefixed with "localnavbarplus-".</li>
+<li><b>Role ID (optional)</b>: The ID of a role can be specified making the link only show for those assigned this role. This includes roles assigned in any context, for example, a user assigned the student role in a course will see the link throughout the site.</li> 
 </ul>
 Please note:
 <ul>
