@@ -63,7 +63,7 @@ function local_navbarplus_render_navbar_output() {
             // Check for the mandatory conditions first.
             // If array contains too less or too many settings, do not proceed and therefore do not display the item.
             // Furthermore check it at least the first three mandatory params are not an empty string.
-            if (count($settings) >= 3 && count($settings) <= 7 &&
+            if (count($settings) >= 3 && count($settings) <= 8 &&
                 $settings[0] !== '' && $settings[1] !== '' && $settings[2] !== '') {
                 foreach ($settings as $i => $setting) {
                     $setting = trim($setting);
@@ -119,6 +119,29 @@ function local_navbarplus_render_navbar_output() {
                             case 6:
                                 $itemid = $setting;
                                 break;
+                            // Check for role assignment.
+                            case 7:
+                                global $USER;
+                                $syscon = \context_system::instance();
+                                $specials = get_user_roles_with_special($syscon, $USER->id);
+                                // Transform the special roles to the matching format.
+                                $specials = array_map(function ($el) {
+                                    return $el->roleid;
+                                }, $specials);
+
+                                if (user_has_role_assignment($USER->id, $setting)) {
+                                   $itemvisible = true;
+                                } else {
+                                    $itemvisible = false;
+                                }
+
+                                // Some system default roles do not have an explicit binding. eg Authenticated user.
+                                if (in_array((int) $setting, $specials)) {
+                                    $itemvisible = true;        
+                                } else {
+                                    $itemvisible = false;
+                                }
+                               break; 
                         }
                     }
                 }
