@@ -4,7 +4,7 @@ moodle-local_navbarplus
 Changes
 -------
 
-### Unreleased
+### v4.1-r2
 
 * 2023-03-09 - Make codechecker happy again
 
