@@ -129,7 +129,7 @@ function local_navbarplus_render_navbar_output() {
                 // To address accessibility, we need to define the icon here because the title from the next pipe is needed.
                 $itemicon = '<i class="icon fa ' . $iconfaidentifier . ' fa-fw" aria-label="' . $itemtitle . '"></i>';
                 // Set attributes for title and alt.
-                $linkattributes = array('title' => $itemtitle);
+                $linkattributes = ['title' => $itemtitle];
                 // If optional param for itemopeninnewwindow is set to true add a target=_blank to the link.
                 if ($itemopeninnewwindow) {
                     $linkattributes['target'] = '_blank';
@@ -162,8 +162,8 @@ function local_navbarplus_render_navbar_output() {
             $tour = \tool_usertours\manager::get_current_tours();
             if (!empty($tour)) {
                 // Open div.
-                $output .= html_writer::start_tag('div', array('class' => 'localnavbarplus nav-link',
-                                                               'id' => 'localnavbarplus-resetusertour'));
+                $output .= html_writer::start_tag('div', ['class' => 'localnavbarplus nav-link',
+                                                               'id' => 'localnavbarplus-resetusertour', ]);
                 // Use the Font Awesome icon "map".
                 $itemicon = '<i class="icon fa fa-map fa-fw"></i>';
                 // Use the string for resetting the tour.
@@ -174,8 +174,8 @@ function local_navbarplus_render_navbar_output() {
                 // data-action attribute. However, in Moodle 4.0 the click handler is looking for the id
                 // of the link. Unfortunately, if we set the id for this link to 'resetpagetour', we have
                 // a duplicate id in the document. We are sorry for that, but we accept it as unavoidable.
-                $attributes = array('alt' => $resetstring, 'title' => $resetstring . ' ' . $resethint,
-                                    'id' => 'resetpagetour');
+                $attributes = ['alt' => $resetstring, 'title' => $resetstring . ' ' . $resethint,
+                                    'id' => 'resetpagetour', ];
                 // Add the link to the HTML.
                 $output .= html_writer::link('#', $itemicon, $attributes);
                 // Close div.
