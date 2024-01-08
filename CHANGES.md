@@ -4,6 +4,10 @@ moodle-local_navbarplus
 Changes
 -------
 
+### Unreleased
+
+* 2024-01-08 - Improve the installation and usage of language packs in Behat tests.
+
 ### v4.2-r1
 
 * 2023-09-01 - Prepare compatibility for Moodle 4.2.
