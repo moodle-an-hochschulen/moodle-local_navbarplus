@@ -6,11 +6,6 @@
   #      | inserticonswithlinks | fa-sign-out|/login/logout.php|Logout   | local_navbarplus |
   # does not work here, as the value contains pipe characters and so the table does not have same number of columns in every row.
   # Escaping the pipes with backslash helped, but then the tests failed because the value is not usable anymore.
-  # The short notation for the settings like
-  #     Given the following "users" exist:
-  #      | username | lang |
-  #      | student1 | de   |
-  # does not work since Moodle 3.9 anymore, so the language has to be set manually.
 Feature: Configuring the navbarplus plugin
   In order to have custom items in the additional navbar
   As admin
@@ -31,23 +26,19 @@ Feature: Configuring the navbarplus plugin
     And I should not see the icon with the title "Falsetest" in the navbar
 
   Scenario: Configuring item with additional language attribute
-    Given the following "users" exist:
-      | username |
-      | student1 |
+    Given the following "language packs" exist:
+      | language |
+      | de       |
+    And the following "users" exist:
+      | username | lang |
+      | student1 | de   |
     When I log in as "admin"
-    And I navigate to "Language > Language packs" in site administration
-    And I set the field "Available language packs" to "de"
-    And I press "Install selected language pack(s)"
-    When I navigate to "Appearance > Navbar Plus" in site administration
+    And I navigate to "Appearance > Navbar Plus" in site administration
     And I set the field "id_s_local_navbarplus_inserticonswithlinks" to "fa-language|/?redirect=0|Languagetest|de"
     And I press "Save"
     Then I should not see the icon with the title "Languagetest" and the iconclass "fa-language" and the link "/?redirect=0" in the navbar
     And I log out
     When I log in as "student1"
-    And I follow "Preferences" in the user menu
-    And I click on "Preferred language" "link"
-    And I set the field "Preferred language" to "Deutsch ‎(de)‎"
-    And I press "Save changes"
     Then I should see the icon with the title "Languagetest" and the iconclass "fa-language" and the link "/?redirect=0" in the navbar
 
   Scenario: Configuring item with the new window attribute
