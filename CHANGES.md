@@ -6,6 +6,7 @@ Changes
 
 ### Unreleased
 
+* 2024-08-11 - Updated Moodle Plugin CI to latest upstream recommendations
 * 2024-01-08 - Improve the installation and usage of language packs in Behat tests.
 
 ### v4.1-r3
