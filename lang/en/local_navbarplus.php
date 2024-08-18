@@ -26,7 +26,7 @@ defined('MOODLE_INTERNAL') || die();
 
 $string['pluginname'] = 'Navbar Plus';
 $string['privacy:metadata'] = 'The Navbar Plus plugin provides extended functionality to Moodle users, but does not store any personal data.';
-// Setting to insert icons with links.
+$string['resetusertours_hint'] = '(Could take a short time)';
 $string['setting_inserticonswithlinks'] = 'Icons with links';
 $string['setting_inserticonswithlinks_desc'] = 'With this setting you can add link icons to the header navbar left to the icons "messages" and "notifications".<br/>
 Each line consists of an icon image, a link URL, a text, supported language(s) (optional) and new window setting (optional) - separated by pipe characters. Each icon needs to be written in a new line.<br/>
@@ -49,7 +49,5 @@ Please note:
 <li> Pipe dividing for optional parameters is always needed if they are located between other options. This means that you have to separate params with the pipe character although they are empty. Also see the example for the Font Awesome icon above. </li>
 <li> If the icon does not show up in the navbar, please check if all mandatory params are set correctly and if the optional language setting fits to your current Moodle user language. </li>
 </ul>';
-// Setting to place a link to be able to reset user tours.
 $string['setting_resetusertours'] = 'Reset user tour link';
 $string['setting_resetusertours_desc'] = 'With this setting you can place a Font Awesome map icon in the navbar with which the user is able to restart the user tour for the current page. By default Boost places the link to reset the user tour within the footer. This might not be eye catching. With this setting you can place the link to the more visible navbar.<br/> If you want to change this icon, please have a look at the README.md file.';
-$string['resetusertours_hint'] = '(Could take a short time)';
