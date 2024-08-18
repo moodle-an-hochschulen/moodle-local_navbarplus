@@ -41,7 +41,7 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class behat_local_navbarplus extends behat_base {
-    // @codingStandardsIgnoreStart
+    // phpcs:disable moodle.Files.LineLength.MaxExceeded
     /**
      * Checks, that the specified element with this title, link and iconclass attribute is existent on the page.
      *
@@ -52,7 +52,6 @@ class behat_local_navbarplus extends behat_base {
      * @param string $link
      */
     public function assert_element_in_navbar_contains_title_iconclass_link($title, $icon, $link) {
-    // @codingStandardsIgnoreEnd
 
         // We are searching for our icons in the navbar.
         $elementxpath = '//div[@id="usernavigation"]';
@@ -65,7 +64,7 @@ class behat_local_navbarplus extends behat_base {
             [$elementxpath, "xpath_element"]);
     }
 
-    // @codingStandardsIgnoreStart
+    // phpcs:disable moodle.Files.LineLength.MaxExceeded
     /**
      * Checks, that the specified element with this title, link and iconclass attribute is not existent on the page.
      *
@@ -76,7 +75,6 @@ class behat_local_navbarplus extends behat_base {
      * @param string $link
      */
     public function assert_element_in_navbar_not_contains_title_iconclass_link($title, $icon, $link) {
-    // @codingStandardsIgnoreEnd
 
         // We are searching for our icons in the navbar.
         $elementxpath = '//div[@id="usernavigation"]';
@@ -165,7 +163,7 @@ class behat_local_navbarplus extends behat_base {
             [$elementxpath, "xpath_element"]);
     }
 
-    // @codingStandardsIgnoreStart
+    // phpcs:disable moodle.Files.LineLength.TooLong
     /**
      * Checks, that the specified element is existent and has additional classes attribute.
      *
@@ -175,7 +173,6 @@ class behat_local_navbarplus extends behat_base {
      * @param string $class
      */
     public function assert_element_in_navbar_has_additional_class($title, $class) {
-    // @codingStandardsIgnoreEnd
 
         // We are searching for our icons in the navbar.
         $elementxpath = '//div[@id="usernavigation"]';
@@ -188,7 +185,7 @@ class behat_local_navbarplus extends behat_base {
             [$elementxpath, "xpath_element"]);
     }
 
-    // @codingStandardsIgnoreStart
+    // phpcs:disable moodle.Files.LineLength.TooLong
     /**
      * Checks, that the specified element is existent and has additional id attribute.
      *
@@ -198,7 +195,6 @@ class behat_local_navbarplus extends behat_base {
      * @param string $id
      */
     public function assert_element_in_navbar_has_additional_id($title, $id) {
-    // @codingStandardsIgnoreEnd
 
         // We are searching for our icons in the navbar.
         $elementxpath = '//div[@id="usernavigation"]';
