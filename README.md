@@ -9,7 +9,7 @@ Moodle plugin which enhances the functionality of Moodle's page header navbar.
 Requirements
 ------------
 
-This plugin requires Moodle 4.3+
+This plugin requires Moodle 4.4+
 
 
 Motivation for this plugin
