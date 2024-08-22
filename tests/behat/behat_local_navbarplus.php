@@ -55,7 +55,7 @@ class behat_local_navbarplus extends behat_base {
 
         // We are searching for our icons in the navbar.
         $elementxpath = '//div[@id="usernavigation"]';
-        $elementxpath .= '/div[contains(@class, "nav-link")]';
+        $elementxpath .= '/div[contains(@class, "localnavbarplus")]';
         $elementxpath .= '/descendant-or-self::a[@title="'. $title . '"][contains(@href, "' . $link . '")]';
         $elementxpath .= '/descendant::i[contains(@class, "' . $icon . '")]';
 
@@ -78,7 +78,7 @@ class behat_local_navbarplus extends behat_base {
 
         // We are searching for our icons in the navbar.
         $elementxpath = '//div[@id="usernavigation"]';
-        $elementxpath .= '/div[contains(@class, "nav-link")]';
+        $elementxpath .= '/div[contains(@class, "localnavbarplus")]';
         $elementxpath .= '/descendant-or-self::a[@title="'. $title . '"][contains(@href, "' . $link . '")]';
         $elementxpath .= '/descendant::i[contains(@class, "' . $icon . '")]';
 
@@ -98,7 +98,7 @@ class behat_local_navbarplus extends behat_base {
 
         // We are searching for our icons in the navbar.
         $elementxpath = '//div[@id="usernavigation"]';
-        $elementxpath .= '/div[contains(@class, "nav-link")]';
+        $elementxpath .= '/div[contains(@class, "localnavbarplus")]';
         $elementxpath .= '/descendant-or-self::a[@title="'. $title . '"]';
 
         // Check if the element exists.
@@ -117,7 +117,7 @@ class behat_local_navbarplus extends behat_base {
 
         // We are searching for our icons in the navbar.
         $elementxpath = '//div[@id="usernavigation"]';
-        $elementxpath .= '/div[contains(@class, "nav-link")]';
+        $elementxpath .= '/div[contains(@class, "localnavbarplus")]';
         $elementxpath .= '/descendant-or-self::a[@title="'. $title . '"]';
 
         // Check if the element does not exist.
@@ -136,7 +136,7 @@ class behat_local_navbarplus extends behat_base {
 
         // We are searching for our icons in the navbar.
         $elementxpath = '//div[@id="usernavigation"]';
-        $elementxpath .= '/div[contains(@class, "nav-link")]';
+        $elementxpath .= '/div[contains(@class, "localnavbarplus")]';
         $elementxpath .= '/descendant-or-self::a[@title="'. $title . '"][contains(@target, "_blank")]';
 
         // Check if the element exists.
@@ -155,7 +155,7 @@ class behat_local_navbarplus extends behat_base {
 
         // We are searching for our icons in the navbar.
         $elementxpath = '//div[@id="usernavigation"]';
-        $elementxpath .= '/div[contains(@class, "nav-link")]';
+        $elementxpath .= '/div[contains(@class, "localnavbarplus")]';
         $elementxpath .= '/descendant-or-self::a[@title="'. $title . '"][contains(@target, "_blank")]';
 
         // Check if the element exists.
@@ -176,7 +176,7 @@ class behat_local_navbarplus extends behat_base {
 
         // We are searching for our icons in the navbar.
         $elementxpath = '//div[@id="usernavigation"]';
-        $elementxpath .= '/div[contains(@class, "nav-link")]';
+        $elementxpath .= '/div[contains(@class, "localnavbarplus")]';
         $elementxpath .= '[contains(@class, "' . $class . '")]';
         $elementxpath .= '/descendant-or-self::a[@title="'. $title . '"]';
 
@@ -198,7 +198,7 @@ class behat_local_navbarplus extends behat_base {
 
         // We are searching for our icons in the navbar.
         $elementxpath = '//div[@id="usernavigation"]';
-        $elementxpath .= '/div[contains(@class, "nav-link")]';
+        $elementxpath .= '/div[contains(@class, "localnavbarplus")]';
         $elementxpath .= '[contains(@id, "' . $id . '")]';
         $elementxpath .= '/descendant-or-self::a[@title="'. $title . '"]';
 

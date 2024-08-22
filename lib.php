@@ -135,8 +135,10 @@ function local_navbarplus_render_navbar_output() {
                     $linkattributes['target'] = '_blank';
                     $linkattributes['rel'] = 'noopener noreferrer';
                 }
+                // Set classes.
+                $linkattributes['class'] = 'nav-link position-relative icon-no-margin';
                 // Define classes for all icons.
-                $itemclasses = 'localnavbarplus nav-link';
+                $itemclasses = 'localnavbarplus';
                 // Add optional individual classes.
                 if (!empty($itemadditionalclasses)) {
                     $itemclasses .= ' ' . $itemadditionalclasses;

@@ -74,7 +74,7 @@ Feature: Configuring the navbarplus plugin
     When I navigate to "Appearance > Navbar Plus" in site administration
     And I set the field "id_s_local_navbarplus_inserticonswithlinks" to "fa-sign-out|/login/logout.php|Logout"
     And I press "Save"
-    Then "div.localnavbarplus.nav-link" "css_element" should appear after "div[data-region='popover-region-messages']" "css_element"
+    Then "div.localnavbarplus" "css_element" should appear after "div[data-region='popover-region-messages']" "css_element"
 
   # The steps to create and use the tour were copied from the @tool_usertours Behat feature.
   # This scenario just differs in the aspect which button is used to reset the tour.

@@ -6,6 +6,7 @@ Changes
 
 ### Unreleased
 
+* 2024-08-22 - Upgrade: Align the icons again properly on Moodle 4.4.
 * 2024-08-20 - Prepare compatibility for Moodle 4.4.
 
 ### v4.3-r2
