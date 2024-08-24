@@ -4,7 +4,7 @@ moodle-local_navbarplus
 Changes
 -------
 
-### Unreleased
+### v4.4-r1
 
 * 2024-08-24 - Development: Rename master branch to main, please update your clones.
 * 2024-08-22 - Upgrade: Align the icons again properly on Moodle 4.4.
