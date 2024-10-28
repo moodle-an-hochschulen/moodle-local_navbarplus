@@ -82,7 +82,7 @@ function local_navbarplus_render_navbar_output() {
                             case 1:
                                 // Get the URL.
                                 try {
-                                    $itemurl = new moodle_url($setting);
+                                    $itemurl = new \core\url($setting);
                                     $itemvisible = true;
                                 } catch (moodle_exception $exception) {
                                     // We're not actually worried about this, we don't want to mess up the display
