@@ -22,6 +22,8 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+use core\output\html_writer;
+
 /**
  * Allow plugins to provide some content to be rendered in the navbar.
  * The plugin must define a PLUGIN_render_navbar_output function that returns
