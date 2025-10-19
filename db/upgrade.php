@@ -31,7 +31,6 @@
 function xmldb_local_navbarplus_upgrade($oldversion) {
     // Change d-*-block classes to d-*-flex classes in the settings and language pack for Moodle 4.0.
     if ($oldversion < 2021120404) {
-
         // Get old setting.
         $config = get_config('local_navbarplus', 'inserticonswithlinks');
 
