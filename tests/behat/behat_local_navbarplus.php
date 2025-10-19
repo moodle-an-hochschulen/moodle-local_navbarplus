@@ -56,12 +56,14 @@ class behat_local_navbarplus extends behat_base {
         // We are searching for our icons in the navbar.
         $elementxpath = '//div[@id="usernavigation"]';
         $elementxpath .= '/div[contains(@class, "localnavbarplus")]';
-        $elementxpath .= '/descendant-or-self::a[@title="'. $title . '"][contains(@href, "' . $link . '")]';
+        $elementxpath .= '/descendant-or-self::a[@title="' . $title . '"][contains(@href, "' . $link . '")]';
         $elementxpath .= '/descendant::i[contains(@class, "' . $icon . '")]';
 
         // Check if the element exists.
-        $this->execute("behat_general::should_exist",
-            [$elementxpath, "xpath_element"]);
+        $this->execute(
+            "behat_general::should_exist",
+            [$elementxpath, "xpath_element"]
+        );
     }
 
     // phpcs:disable moodle.Files.LineLength.MaxExceeded
@@ -79,12 +81,14 @@ class behat_local_navbarplus extends behat_base {
         // We are searching for our icons in the navbar.
         $elementxpath = '//div[@id="usernavigation"]';
         $elementxpath .= '/div[contains(@class, "localnavbarplus")]';
-        $elementxpath .= '/descendant-or-self::a[@title="'. $title . '"][contains(@href, "' . $link . '")]';
+        $elementxpath .= '/descendant-or-self::a[@title="' . $title . '"][contains(@href, "' . $link . '")]';
         $elementxpath .= '/descendant::i[contains(@class, "' . $icon . '")]';
 
         // Check if the element does not exist.
-        $this->execute("behat_general::should_not_exist",
-                [$elementxpath, "xpath_element"]);
+        $this->execute(
+            "behat_general::should_not_exist",
+            [$elementxpath, "xpath_element"]
+        );
     }
 
     /**
@@ -99,11 +103,13 @@ class behat_local_navbarplus extends behat_base {
         // We are searching for our icons in the navbar.
         $elementxpath = '//div[@id="usernavigation"]';
         $elementxpath .= '/div[contains(@class, "localnavbarplus")]';
-        $elementxpath .= '/descendant-or-self::a[@title="'. $title . '"]';
+        $elementxpath .= '/descendant-or-self::a[@title="' . $title . '"]';
 
         // Check if the element exists.
-        $this->execute("behat_general::should_exist",
-            [$elementxpath, "xpath_element"]);
+        $this->execute(
+            "behat_general::should_exist",
+            [$elementxpath, "xpath_element"]
+        );
     }
 
     /**
@@ -118,11 +124,13 @@ class behat_local_navbarplus extends behat_base {
         // We are searching for our icons in the navbar.
         $elementxpath = '//div[@id="usernavigation"]';
         $elementxpath .= '/div[contains(@class, "localnavbarplus")]';
-        $elementxpath .= '/descendant-or-self::a[@title="'. $title . '"]';
+        $elementxpath .= '/descendant-or-self::a[@title="' . $title . '"]';
 
         // Check if the element does not exist.
-        $this->execute("behat_general::should_not_exist",
-            [$elementxpath, "xpath_element"]);
+        $this->execute(
+            "behat_general::should_not_exist",
+            [$elementxpath, "xpath_element"]
+        );
     }
 
     /**
@@ -137,11 +145,13 @@ class behat_local_navbarplus extends behat_base {
         // We are searching for our icons in the navbar.
         $elementxpath = '//div[@id="usernavigation"]';
         $elementxpath .= '/div[contains(@class, "localnavbarplus")]';
-        $elementxpath .= '/descendant-or-self::a[@title="'. $title . '"][contains(@target, "_blank")]';
+        $elementxpath .= '/descendant-or-self::a[@title="' . $title . '"][contains(@target, "_blank")]';
 
         // Check if the element exists.
-        $this->execute("behat_general::should_exist",
-            [$elementxpath, "xpath_element"]);
+        $this->execute(
+            "behat_general::should_exist",
+            [$elementxpath, "xpath_element"]
+        );
     }
 
     /**
@@ -156,11 +166,13 @@ class behat_local_navbarplus extends behat_base {
         // We are searching for our icons in the navbar.
         $elementxpath = '//div[@id="usernavigation"]';
         $elementxpath .= '/div[contains(@class, "localnavbarplus")]';
-        $elementxpath .= '/descendant-or-self::a[@title="'. $title . '"][contains(@target, "_blank")]';
+        $elementxpath .= '/descendant-or-self::a[@title="' . $title . '"][contains(@target, "_blank")]';
 
         // Check if the element exists.
-        $this->execute("behat_general::should_not_exist",
-            [$elementxpath, "xpath_element"]);
+        $this->execute(
+            "behat_general::should_not_exist",
+            [$elementxpath, "xpath_element"]
+        );
     }
 
     // phpcs:disable moodle.Files.LineLength.TooLong
@@ -178,11 +190,13 @@ class behat_local_navbarplus extends behat_base {
         $elementxpath = '//div[@id="usernavigation"]';
         $elementxpath .= '/div[contains(@class, "localnavbarplus")]';
         $elementxpath .= '[contains(@class, "' . $class . '")]';
-        $elementxpath .= '/descendant-or-self::a[@title="'. $title . '"]';
+        $elementxpath .= '/descendant-or-self::a[@title="' . $title . '"]';
 
         // Check if the element exists.
-        $this->execute("behat_general::should_exist",
-            [$elementxpath, "xpath_element"]);
+        $this->execute(
+            "behat_general::should_exist",
+            [$elementxpath, "xpath_element"]
+        );
     }
 
     // phpcs:disable moodle.Files.LineLength.TooLong
@@ -200,10 +214,12 @@ class behat_local_navbarplus extends behat_base {
         $elementxpath = '//div[@id="usernavigation"]';
         $elementxpath .= '/div[contains(@class, "localnavbarplus")]';
         $elementxpath .= '[contains(@id, "' . $id . '")]';
-        $elementxpath .= '/descendant-or-self::a[@title="'. $title . '"]';
+        $elementxpath .= '/descendant-or-self::a[@title="' . $title . '"]';
 
         // Check if the element exists.
-        $this->execute("behat_general::should_exist",
-            [$elementxpath, "xpath_element"]);
+        $this->execute(
+            "behat_general::should_exist",
+            [$elementxpath, "xpath_element"]
+        );
     }
 }

@@ -65,8 +65,10 @@ function local_navbarplus_render_navbar_output() {
             // Check for the mandatory conditions first.
             // If array contains too less or too many settings, do not proceed and therefore do not display the item.
             // Furthermore check it at least the first three mandatory params are not an empty string.
-            if (count($settings) >= 3 && count($settings) <= 7 &&
-                $settings[0] !== '' && $settings[1] !== '' && $settings[2] !== '') {
+            if (
+                count($settings) >= 3 && count($settings) <= 7 &&
+                $settings[0] !== '' && $settings[1] !== '' && $settings[2] !== ''
+            ) {
                 foreach ($settings as $i => $setting) {
                     $setting = trim($setting);
                     if (!empty($setting)) {
