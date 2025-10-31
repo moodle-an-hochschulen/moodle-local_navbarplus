@@ -49,7 +49,7 @@ fa-sign-out|/login/logout.php|Logout||false
 ```
 
 Further information to the parameters:
-* Image: You can add Font Awesome icon identifiers (<a href="http://fontawesome.io/icons/">See the icon list on fontawesome.io</a>). Font Awesome is included in Moodle's core Clean and Boost themes since the version 3.3.
+* Image: You can add Font Awesome icon identifiers (<a href="https://fontawesome.com/v6/icons">See the icon list on fontawesome.com/v6/icons</a>). Font Awesome 6 is included in Moodle core.
 * Link: The link target can be defined by a full web URL (e.g. https://moodle.org) or a relative path within your Moodle instance (e.g. /login/logout.php).
 * Title: This text will be written in the title and alt attributes of the icon.
 * Supported language(s) (optional): This setting can be used for displaying the link to users of the specified language only. Separate more than one supported language with commas. If the link should be displayed in all languages, then leave this field empty.
