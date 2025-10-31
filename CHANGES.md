@@ -4,6 +4,10 @@ moodle-local_navbarplus
 Changes
 -------
 
+### Unreleased
+
+* 2025-10-31 - Improvement: Change link to Bootstrap classes documentation in plugin settings from Bootstrap 4 to 5.
+
 ### v5.0-r2
 
 * 2025-10-15 - Make codechecker happy again
