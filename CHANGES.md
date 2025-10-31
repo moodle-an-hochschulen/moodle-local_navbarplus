@@ -4,6 +4,10 @@ moodle-local_navbarplus
 Changes
 -------
 
+### Unreleased
+
+* 2025-10-31 - Improvement: Change link to FontAwesome icons documentation in plugin settings from Fontawesome 4 to 6.
+
 ### v4.5-r3
 
 * 2025-10-31 - Improvement: Change link to Bootstrap classes documentation in plugin settings from Bootstrap 4 to 5.
