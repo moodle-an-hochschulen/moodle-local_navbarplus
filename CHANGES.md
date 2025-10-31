@@ -4,7 +4,7 @@ moodle-local_navbarplus
 Changes
 -------
 
-### Unreleased
+### v5.0-r4
 
 * 2025-10-31 - Improvement: Change link to FontAwesome icons documentation in plugin settings from Fontawesome 4 to 6.
 
