@@ -80,6 +80,8 @@ Feature: Configuring the navbarplus plugin
   # This scenario just differs in the aspect which button is used to reset the tour.
   @javascript
   Scenario: Enabling the link to show the reset users tour link in the navbar if a user tour is created for that page
+    Given the following config values are set as admin:
+      | enablemyhome | 1 |
     When I log in as "admin"
     And I navigate to "Appearance > Navbar Plus" in site administration
     And I set the field "Reset user tour link" to "Yes"
