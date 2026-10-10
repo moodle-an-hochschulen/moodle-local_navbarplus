@@ -4,6 +4,10 @@ moodle-local_navbarplus
 Changes
 -------
 
+### Unreleased
+
+* 2026-10-05 - Prepare compatibility for Moodle 5.3.
+
 ### v5.2-r2
 
 * 2026-10-19 - Bugfix: Let Bootstrap text colour classes which are added as additional classes change the icon colour, resolves #25.
