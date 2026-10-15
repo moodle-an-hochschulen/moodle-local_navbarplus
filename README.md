@@ -216,7 +216,7 @@ Moodle an Hochschulen e.V.
 Individual copyrights of individual developers are tracked in PHPDoc comments and Git commits.
 
 
-Copyright history
+Initial copyright
 -----------------
 
 This plugin was initially built, maintained and published by\
