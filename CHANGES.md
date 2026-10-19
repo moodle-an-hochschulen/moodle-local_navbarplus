@@ -4,6 +4,10 @@ moodle-local_navbarplus
 Changes
 -------
 
+### Unreleased
+
+* 2026-10-19 - Bugfix: Show the reset user tour icon in the same colour as the other navbar icons, resolves #23.
+
 ### v5.1-r1
 
 * 2025-10-26 - Prepare compatibility for Moodle 5.1.

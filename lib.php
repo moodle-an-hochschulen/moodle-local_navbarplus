@@ -168,7 +168,7 @@ function local_navbarplus_render_navbar_output() {
             $tour = \tool_usertours\manager::get_current_tours();
             if (!empty($tour)) {
                 // Open div.
-                $output .= html_writer::start_tag('div', ['class' => 'localnavbarplus nav-link',
+                $output .= html_writer::start_tag('div', ['class' => 'localnavbarplus',
                                                                'id' => 'localnavbarplus-resetusertour', ]);
                 // Use the Font Awesome icon "map".
                 $itemicon = '<i class="icon fa fa-map fa-fw"></i>';
@@ -182,6 +182,8 @@ function local_navbarplus_render_navbar_output() {
                 // a duplicate id in the document. We are sorry for that, but we accept it as unavoidable.
                 $attributes = ['alt' => $resetstring, 'title' => $resetstring . ' ' . $resethint,
                                     'id' => 'resetpagetour', ];
+                // Set the same classes as for the icons with links to give this icon the same look as the other navbar icons.
+                $attributes['class'] = 'nav-link position-relative icon-no-margin';
                 // Add the link to the HTML.
                 $output .= html_writer::link('#', $itemicon, $attributes);
                 // Close div.
