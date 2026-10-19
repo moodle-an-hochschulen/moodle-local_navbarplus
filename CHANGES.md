@@ -4,6 +4,10 @@ moodle-local_navbarplus
 Changes
 -------
 
+### Unreleased
+
+* 2026-10-19 - Bugfix: Show the reset user tour icon in the same colour as the other navbar icons, resolves #23.
+
 ### v4.5-r4
 
 * 2025-10-31 - Improvement: Change link to FontAwesome icons documentation in plugin settings from Fontawesome 4 to 6.
