@@ -2,3 +2,22 @@
 body:not(.jsenabled) #localnavbarplus-resetusertour {
     display: none;
 }
+
+/* Let the icon link take the colour of a Bootstrap text colour utility which was added as additional class to the
+   surrounding div. Otherwise, the navbar's .nav-link colour would win over the colour of the surrounding div.
+   The leading .navbar is needed to win over Bootstrap's hover and focus colours of the navbar links as well. */
+.navbar .localnavbarplus.text-primary > a.nav-link,
+.navbar .localnavbarplus.text-secondary > a.nav-link,
+.navbar .localnavbarplus.text-success > a.nav-link,
+.navbar .localnavbarplus.text-info > a.nav-link,
+.navbar .localnavbarplus.text-warning > a.nav-link,
+.navbar .localnavbarplus.text-danger > a.nav-link,
+.navbar .localnavbarplus.text-light > a.nav-link,
+.navbar .localnavbarplus.text-dark > a.nav-link,
+.navbar .localnavbarplus.text-white > a.nav-link,
+.navbar .localnavbarplus.text-body > a.nav-link,
+.navbar .localnavbarplus.text-muted > a.nav-link,
+.navbar .localnavbarplus.text-black-50 > a.nav-link,
+.navbar .localnavbarplus.text-white-50 > a.nav-link {
+    color: inherit;
+}
