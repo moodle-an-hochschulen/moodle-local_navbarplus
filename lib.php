@@ -131,7 +131,11 @@ function local_navbarplus_render_navbar_output() {
             // This is if all mandatory params are set and the item matches the optional given language setting.
             if ($itemvisible) {
                 // To address accessibility, we need to define the icon here because the title from the next pipe is needed.
-                $itemicon = '<i class="icon fa ' . $iconfaidentifier . ' fa-fw" aria-label="' . $itemtitle . '"></i>';
+                // The icon is built with html_writer to make sure that the title is escaped in the aria-label attribute.
+                $itemicon = html_writer::tag('i', '', [
+                    'class' => 'icon fa ' . $iconfaidentifier . ' fa-fw',
+                    'aria-label' => $itemtitle,
+                ]);
                 // Set attributes for title and alt.
                 $linkattributes = ['title' => $itemtitle];
                 // If optional param for itemopeninnewwindow is set to true add a target=_blank to the link.
