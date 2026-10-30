@@ -176,7 +176,8 @@ function local_navbarplus_render_navbar_output() {
     }
     // If setting resetuseertours is enabled.
     if (isset($config->resetusertours) && $config->resetusertours == true) {
-        if (isloggedin() && !isguestuser()) {
+        // Only proceed if the user is logged in, is not a guest and the user tours plugin is present.
+        if (isloggedin() && !isguestuser() && class_exists('\tool_usertours\manager')) {
             // Get the tour for the current page.
             $tour = \tool_usertours\manager::get_current_tours();
             if (!empty($tour)) {
