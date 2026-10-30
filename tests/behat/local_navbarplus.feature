@@ -69,6 +69,14 @@ Feature: Configuring the navbarplus plugin
     And I press "Save"
     Then I should see the icon with the title "Idtest" and the id "optional-id" in the navbar
 
+  Scenario: Configuring item with HTML in the title attribute and check that it is escaped
+    When I log in as "admin"
+    And I navigate to "Appearance > Navbar Plus" in site administration
+    And I set the field "id_s_local_navbarplus_inserticonswithlinks" to "fa-bug|/?redirect=0|Escapetest\"><b class=\"localnavbarplus-injected\">Injected</b>"
+    And I press "Save"
+    Then "#usernavigation .localnavbarplus a[href*='redirect=0'] i.fa-bug" "css_element" should exist
+    And "#usernavigation b.localnavbarplus-injected" "css_element" should not exist
+
   Scenario: Verifying the icon position
     When I log in as "admin"
     When I navigate to "Appearance > Navbar Plus" in site administration
