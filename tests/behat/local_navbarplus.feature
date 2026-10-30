@@ -138,11 +138,10 @@ Feature: Configuring the navbarplus plugin
   @javascript
   Scenario: Enabling the link to show the reset users tour link in the navbar if a user tour is created for that page
     Given the following config values are set as admin:
-      | enablemyhome | 1 |
+      | config         | value | plugin           |
+      | enablemyhome   | 1     |                  |
+      | resetusertours | 1     | local_navbarplus |
     When I log in as "admin"
-    And I navigate to "Appearance > Navbar Plus" in site administration
-    And I set the field "Reset user tour link" to "Yes"
-    And I press "Save"
     And I add a new user tour with:
       | Name                | First tour |
       | Description         | My first tour |
@@ -174,5 +173,35 @@ Feature: Configuring the navbarplus plugin
     And I click on "#localnavbarplus-resetusertour #resetpagetour" "css_element"
     And I should see "Welcome to your personal learning space. We'd like to give you a quick tour to show you some of the areas you may find helpful"
     And I click on "Skip tour" "button" in the "[data-role='flexitour-step']" "css_element"
+    And I am on site homepage
+    And I should not see the icon with the title "Reset user tour on this page (Could take a short time)" in the navbar
+
+  # The tour is never displayed to guests as tool_usertours does not bootstrap tours for them.
+  # However, \tool_usertours\manager::get_current_tours() still returns the frontpage tour for the guest user,
+  # so this scenario verifies that the plugin itself prevents the reset user tour link from being shown to guests.
+  # Non-logged-in users are not tested here as get_current_tours() never returns any tour for them
+  # (\core_user::awaiting_action() is true for them), so such a test would not be able to fail.
+  @javascript
+  Scenario: Enabling the link to show the reset users tour link in the navbar and check that it is not shown to guests
+    Given the following config values are set as admin:
+      | config         | value | plugin           |
+      | enablemyhome   | 1     |                  |
+      | resetusertours | 1     | local_navbarplus |
+    And I log in as "admin"
+    And I add a new user tour with:
+      | Name                | Frontpage tour |
+      | Description         | My frontpage tour |
+      | Apply to URL match  | FRONTPAGE |
+      | Tour is enabled     | 1 |
+    And I add steps to the "Frontpage tour" tour:
+      | targettype                | Title   | id_content                   | Content type   |
+      | Display in middle of page | Welcome | Welcome to the site homepage | Manual         |
+    When I am on site homepage
+    And I should see "Welcome to the site homepage"
+    And I press "Got it"
+    And I am on site homepage
+    Then I should see the icon with the title "Reset user tour on this page (Could take a short time)" in the navbar
+    And I log out
+    And I log in as "guest"
     And I am on site homepage
     And I should not see the icon with the title "Reset user tour on this page (Could take a short time)" in the navbar
