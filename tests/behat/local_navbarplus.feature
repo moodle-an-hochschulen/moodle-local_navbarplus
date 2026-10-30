@@ -77,6 +77,34 @@ Feature: Configuring the navbarplus plugin
     Then "#usernavigation .localnavbarplus a[href*='redirect=0'] i.fa-bug" "css_element" should exist
     And "#usernavigation b.localnavbarplus-injected" "css_element" should not exist
 
+  Scenario: Configuring item with a https URL
+    When I log in as "admin"
+    And I navigate to "Appearance > Navbar Plus" in site administration
+    And I set the field "id_s_local_navbarplus_inserticonswithlinks" to "fa-globe|https://moodle.org|Httpstest"
+    And I press "Save"
+    Then I should see the icon with the title "Httpstest" and the iconclass "fa-globe" and the link "https://moodle.org" in the navbar
+
+  Scenario: Configuring item with a mailto URL
+    When I log in as "admin"
+    And I navigate to "Appearance > Navbar Plus" in site administration
+    And I set the field "id_s_local_navbarplus_inserticonswithlinks" to "fa-envelope|mailto:support@example.com|Mailtotest"
+    And I press "Save"
+    Then I should see the icon with the title "Mailtotest" and the iconclass "fa-envelope" and the link "mailto:support@example.com" in the navbar
+
+  Scenario: Configuring item with a javascript URL and check that the icon is not shown
+    When I log in as "admin"
+    And I navigate to "Appearance > Navbar Plus" in site administration
+    And I set the field "id_s_local_navbarplus_inserticonswithlinks" to "fa-bug|javascript:%0Aalert(1)|Javascripttest"
+    And I press "Save"
+    Then I should not see the icon with the title "Javascripttest" in the navbar
+
+  Scenario: Configuring item with an invalid Font Awesome identifier and check that the icon is not shown
+    When I log in as "admin"
+    And I navigate to "Appearance > Navbar Plus" in site administration
+    And I set the field "id_s_local_navbarplus_inserticonswithlinks" to "bug|/?redirect=0|Invalidicontest"
+    And I press "Save"
+    Then I should not see the icon with the title "Invalidicontest" in the navbar
+
   Scenario: Verifying the icon position
     When I log in as "admin"
     When I navigate to "Appearance > Navbar Plus" in site administration
