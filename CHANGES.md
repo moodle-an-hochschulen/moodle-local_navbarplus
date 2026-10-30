@@ -4,6 +4,10 @@ moodle-local_navbarplus
 Changes
 -------
 
+### Unreleased
+
+* 2026-10-30 - Improvement: Use the logical AND operator instead of the bitwise AND assignment operator for the language check to keep the item visibility a boolean.
+
 ### v5.3-r1
 
 * 2026-10-05 - Prepare compatibility for Moodle 5.3.
