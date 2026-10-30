@@ -67,8 +67,10 @@ function local_navbarplus_render_navbar_output() {
             // Furthermore check it at least the first three mandatory params are not an empty string.
             if (
                 count($settings) >= 3 && count($settings) <= 7 &&
-                $settings[0] !== '' && $settings[1] !== '' && $settings[2] !== ''
+                trim($settings[0]) !== '' && trim($settings[1]) !== '' && trim($settings[2]) !== ''
             ) {
+                // The item is visible by default now and each of the following checks can only hide it.
+                $itemvisible = true;
                 foreach ($settings as $i => $setting) {
                     $setting = trim($setting);
                     if (!empty($setting)) {
@@ -79,7 +81,8 @@ function local_navbarplus_render_navbar_output() {
                                 // Check if it's matching the Font Awesome pattern.
                                 if (preg_match($faiconpattern, $setting) > 0) {
                                     $iconfaidentifier = $setting;
-                                    $itemvisible = true;
+                                } else {
+                                    $itemvisible = false;
                                 }
                                 break;
                             // Check for the mandatory second param: URL.
@@ -87,7 +90,14 @@ function local_navbarplus_render_navbar_output() {
                                 // Get the URL.
                                 try {
                                     $itemurl = new \core\url($setting);
-                                    $itemvisible = true;
+                                    // Only allow URLs with the http, https or mailto scheme or without any scheme.
+                                    // Other schemes like javascript: would run script code in the browser,
+                                    // so we hide the icon in this case.
+                                    $itemurlscheme = strtolower($itemurl->get_scheme());
+                                    if (!in_array($itemurlscheme, ['', 'http', 'https', 'mailto'])) {
+                                        $itemurl = null;
+                                        $itemvisible = false;
+                                    }
                                 } catch (moodle_exception $exception) {
                                     // We're not actually worried about this, we don't want to mess up the display
                                     // just for a wrongly entered URL. We just hide the icon in this case.
@@ -98,7 +108,6 @@ function local_navbarplus_render_navbar_output() {
                             // Check for the mandatory third param: text for title and alt attribute.
                             case 2:
                                 $itemtitle = $setting;
-                                $itemvisible = true;
                                 break;
                             // Check for the optional fourth param: language support.
                             case 3:

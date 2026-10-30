@@ -6,6 +6,8 @@ Changes
 
 ### Unreleased
 
+* 2026-10-30 - Bugfix: Hide the icon with link if the Font Awesome identifier is invalid, as it was already intended and documented.
+* 2026-10-30 - Improvement: Only allow URLs with the http, https or mailto scheme or relative URLs for the icons with links.
 * 2026-10-30 - Bugfix: Escape the icon title in the aria-label attribute of the icons with links.
 * 2026-10-30 - Improvement: Use the logical AND operator instead of the bitwise AND assignment operator for the language check to keep the item visibility a boolean.
 
