@@ -105,6 +105,27 @@ Feature: Configuring the navbarplus plugin
     And I press "Save"
     Then I should not see the icon with the title "Invalidicontest" in the navbar
 
+  Scenario: Configuring item with an unparseable URL and check that the icon is not shown
+    When I log in as "admin"
+    And I navigate to "Appearance > Navbar Plus" in site administration
+    And I set the field "id_s_local_navbarplus_inserticonswithlinks" to "fa-bug|http://:80|Invalidurltest"
+    And I press "Save"
+    Then I should not see the icon with the title "Invalidurltest" in the navbar
+
+  Scenario: Configuring item with a mandatory attribute which only contains whitespace and check that the icon is not shown
+    When I log in as "admin"
+    And I navigate to "Appearance > Navbar Plus" in site administration
+    And I set the field "id_s_local_navbarplus_inserticonswithlinks" to "fa-bug|   |Whitespacetest"
+    And I press "Save"
+    Then I should not see the icon with the title "Whitespacetest" in the navbar
+
+  Scenario: Configuring item with a title which contains the value 0 and check that it is used
+    When I log in as "admin"
+    And I navigate to "Appearance > Navbar Plus" in site administration
+    And I set the field "id_s_local_navbarplus_inserticonswithlinks" to "fa-bug|/?redirect=0|0"
+    And I press "Save"
+    Then I should see the icon with the title "0" and the iconclass "fa-bug" and the link "/?redirect=0" in the navbar
+
   Scenario: Verifying the icon position
     When I log in as "admin"
     When I navigate to "Appearance > Navbar Plus" in site administration
