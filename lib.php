@@ -73,7 +73,7 @@ function local_navbarplus_render_navbar_output() {
                 $itemvisible = true;
                 foreach ($settings as $i => $setting) {
                     $setting = trim($setting);
-                    if (!empty($setting)) {
+                    if ($setting !== '') {
                         switch ($i) {
                             // Check for the mandatory first param: icon.
                             case 0:
