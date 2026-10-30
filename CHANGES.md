@@ -6,6 +6,7 @@ Changes
 
 ### Unreleased
 
+* 2026-10-30 - Improvement: Only show the reset user tour icon if the user tours plugin is present.
 * 2026-10-30 - Bugfix: Do not show the reset user tour icon to guests, as user tours are not available to them anyway.
 * 2026-10-30 - Bugfix: Do not skip params of the icons with links which have the value 0.
 * 2026-10-30 - Bugfix: Hide the icon with link if the Font Awesome identifier is invalid, as it was already intended and documented.
