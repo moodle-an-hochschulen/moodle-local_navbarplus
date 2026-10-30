@@ -105,7 +105,7 @@ function local_navbarplus_render_navbar_output() {
                                 // Only proceed if something is entered here. This parameter is optional.
                                 // If no language is given the icon will be displayed in the navbar by default.
                                 $itemlanguages = array_map('trim', explode(',', $setting));
-                                $itemvisible &= in_array(current_language(), $itemlanguages);
+                                $itemvisible = $itemvisible && in_array(current_language(), $itemlanguages);
                                 break;
                             // Check for the optional fifth param: the target attribute.
                             case 4:
