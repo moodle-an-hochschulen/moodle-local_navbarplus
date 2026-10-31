@@ -93,8 +93,13 @@ function local_navbarplus_render_navbar_output() {
                                     // Only allow URLs with the http, https or mailto scheme or without any scheme.
                                     // Other schemes like javascript: would run script code in the browser,
                                     // so we hide the icon in this case.
+                                    // A URL without a scheme but with a host is hidden as well, as a value like
+                                    // javascript:1/alert(1) is parsed as host and port and would bypass the check otherwise.
                                     $itemurlscheme = strtolower($itemurl->get_scheme());
-                                    if (!in_array($itemurlscheme, ['', 'http', 'https', 'mailto'])) {
+                                    if (
+                                        !in_array($itemurlscheme, ['', 'http', 'https', 'mailto']) ||
+                                        ($itemurlscheme === '' && $itemurl->get_host() !== '')
+                                    ) {
                                         $itemurl = null;
                                         $itemvisible = false;
                                     }
