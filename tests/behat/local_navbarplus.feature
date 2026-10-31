@@ -11,12 +11,19 @@ Feature: Configuring the navbarplus plugin
   As admin
   I need to be able to configure the navbarplus plugin
 
-  Scenario: Configuring item with mandatory attributes
+  Scenario Outline: Configuring item with valid mandatory attributes
     When I log in as "admin"
     And I navigate to "Appearance > Navbar Plus" in site administration
-    And I set the field "id_s_local_navbarplus_inserticonswithlinks" to "fa-sign-out|/login/logout.php|Logout"
+    And I set the field "id_s_local_navbarplus_inserticonswithlinks" to "<icon>|<link>|<title>"
     And I press "Save"
-    Then I should see the icon with the title "Logout" and the iconclass "fa-sign-out" and the link "/login/logout.php" in the navbar
+    Then I should see the icon with the title "<title>" and the iconclass "<icon>" and the link "<link>" in the navbar
+
+    Examples:
+      | icon        | link                       | title      | description            |
+      | fa-sign-out | /login/logout.php          | Logout     | Relative URL           |
+      | fa-globe    | https://moodle.org         | Httpstest  | https URL              |
+      | fa-envelope | mailto:support@example.com | Mailtotest | mailto URL             |
+      | fa-bug      | /?redirect=0               | 0          | Title with the value 0 |
 
   Scenario: Configuring item with less than mandatory attributes
     When I log in as "admin"
@@ -77,40 +84,19 @@ Feature: Configuring the navbarplus plugin
     Then "#usernavigation .localnavbarplus a[href*='redirect=0'] i.fa-bug" "css_element" should exist
     And "#usernavigation b.localnavbarplus-injected" "css_element" should not exist
 
-  Scenario: Configuring item with a https URL
+  Scenario Outline: Configuring item with invalid mandatory attributes and check that the icon is not shown
     When I log in as "admin"
     And I navigate to "Appearance > Navbar Plus" in site administration
-    And I set the field "id_s_local_navbarplus_inserticonswithlinks" to "fa-globe|https://moodle.org|Httpstest"
+    And I set the field "id_s_local_navbarplus_inserticonswithlinks" to "<icon>|<link>|<title>"
     And I press "Save"
-    Then I should see the icon with the title "Httpstest" and the iconclass "fa-globe" and the link "https://moodle.org" in the navbar
+    Then I should not see the icon with the title "<title>" in the navbar
 
-  Scenario: Configuring item with a mailto URL
-    When I log in as "admin"
-    And I navigate to "Appearance > Navbar Plus" in site administration
-    And I set the field "id_s_local_navbarplus_inserticonswithlinks" to "fa-envelope|mailto:support@example.com|Mailtotest"
-    And I press "Save"
-    Then I should see the icon with the title "Mailtotest" and the iconclass "fa-envelope" and the link "mailto:support@example.com" in the navbar
-
-  Scenario: Configuring item with a javascript URL and check that the icon is not shown
-    When I log in as "admin"
-    And I navigate to "Appearance > Navbar Plus" in site administration
-    And I set the field "id_s_local_navbarplus_inserticonswithlinks" to "fa-bug|javascript:%0Aalert(1)|Javascripttest"
-    And I press "Save"
-    Then I should not see the icon with the title "Javascripttest" in the navbar
-
-  Scenario: Configuring item with an invalid Font Awesome identifier and check that the icon is not shown
-    When I log in as "admin"
-    And I navigate to "Appearance > Navbar Plus" in site administration
-    And I set the field "id_s_local_navbarplus_inserticonswithlinks" to "bug|/?redirect=0|Invalidicontest"
-    And I press "Save"
-    Then I should not see the icon with the title "Invalidicontest" in the navbar
-
-  Scenario: Configuring item with an unparseable URL and check that the icon is not shown
-    When I log in as "admin"
-    And I navigate to "Appearance > Navbar Plus" in site administration
-    And I set the field "id_s_local_navbarplus_inserticonswithlinks" to "fa-bug|http://:80|Invalidurltest"
-    And I press "Save"
-    Then I should not see the icon with the title "Invalidurltest" in the navbar
+    Examples:
+      | icon   | link                   | title              | description                                 |
+      | fa-bug | javascript:%0Aalert(1) | Javascripttest     | javascript URL                              |
+      | fa-bug | javascript:1/alert(1)  | Javascripthosttest | javascript URL which is parsed as host/port |
+      | fa-bug | http://:80             | Invalidurltest     | Unparseable URL                             |
+      | bug    | /?redirect=0           | Invalidicontest    | Invalid Font Awesome identifier             |
 
   Scenario: Configuring item with a mandatory attribute which only contains whitespace and check that the icon is not shown
     When I log in as "admin"
@@ -118,13 +104,6 @@ Feature: Configuring the navbarplus plugin
     And I set the field "id_s_local_navbarplus_inserticonswithlinks" to "fa-bug|   |Whitespacetest"
     And I press "Save"
     Then I should not see the icon with the title "Whitespacetest" in the navbar
-
-  Scenario: Configuring item with a title which contains the value 0 and check that it is used
-    When I log in as "admin"
-    And I navigate to "Appearance > Navbar Plus" in site administration
-    And I set the field "id_s_local_navbarplus_inserticonswithlinks" to "fa-bug|/?redirect=0|0"
-    And I press "Save"
-    Then I should see the icon with the title "0" and the iconclass "fa-bug" and the link "/?redirect=0" in the navbar
 
   Scenario: Verifying the icon position
     When I log in as "admin"
