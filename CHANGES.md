@@ -6,6 +6,7 @@ Changes
 
 ### Unreleased
 
+* 2026-10-31 - Tests: Combine the Behat scenarios for valid and invalid mandatory attributes of the icons with links into scenario outlines.
 * 2026-10-31 - Bugfix: Also hide the icon with link if the URL has no scheme but a host, as a value like javascript:1/alert(1) bypassed the URL scheme check otherwise.
 * 2026-10-30 - Improvement: Only show the reset user tour icon if the user tours plugin is present.
 * 2026-10-30 - Bugfix: Do not show the reset user tour icon to guests, as user tours are not available to them anyway.
