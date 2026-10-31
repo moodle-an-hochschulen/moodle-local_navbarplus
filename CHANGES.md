@@ -6,6 +6,7 @@ Changes
 
 ### Unreleased
 
+* 2026-10-31 - Bugfix: Also hide the icon with link if the URL has no scheme but a host, as a value like javascript:1/alert(1) bypassed the URL scheme check otherwise.
 * 2026-10-30 - Improvement: Only show the reset user tour icon if the user tours plugin is present.
 * 2026-10-30 - Bugfix: Do not show the reset user tour icon to guests, as user tours are not available to them anyway.
 * 2026-10-30 - Bugfix: Do not skip params of the icons with links which have the value 0.
