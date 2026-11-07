@@ -4,6 +4,18 @@ moodle-local_navbarplus
 Changes
 -------
 
+### Unreleased
+
+* 2026-10-31 - Tests: Combine the Behat scenarios for valid and invalid mandatory attributes of the icons with links into scenario outlines.
+* 2026-10-31 - Bugfix: Also hide the icon with link if the URL has no scheme but a host, as a value like javascript:1/alert(1) bypassed the URL scheme check otherwise.
+* 2026-10-30 - Improvement: Only show the reset user tour icon if the user tours plugin is present.
+* 2026-10-30 - Bugfix: Do not show the reset user tour icon to guests, as user tours are not available to them anyway.
+* 2026-10-30 - Bugfix: Do not skip params of the icons with links which have the value 0.
+* 2026-10-30 - Bugfix: Hide the icon with link if the Font Awesome identifier is invalid, as it was already intended and documented.
+* 2026-10-30 - Improvement: Only allow URLs with the http, https or mailto scheme or relative URLs for the icons with links.
+* 2026-10-30 - Bugfix: Escape the icon title in the aria-label attribute of the icons with links.
+* 2026-10-30 - Improvement: Use the logical AND operator instead of the bitwise AND assignment operator for the language check to keep the item visibility a boolean.
+
 ### v5.3-r1
 
 * 2026-10-05 - Prepare compatibility for Moodle 5.3.

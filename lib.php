@@ -67,11 +67,13 @@ function local_navbarplus_render_navbar_output() {
             // Furthermore check it at least the first three mandatory params are not an empty string.
             if (
                 count($settings) >= 3 && count($settings) <= 7 &&
-                $settings[0] !== '' && $settings[1] !== '' && $settings[2] !== ''
+                trim($settings[0]) !== '' && trim($settings[1]) !== '' && trim($settings[2]) !== ''
             ) {
+                // The item is visible by default now and each of the following checks can only hide it.
+                $itemvisible = true;
                 foreach ($settings as $i => $setting) {
                     $setting = trim($setting);
-                    if (!empty($setting)) {
+                    if ($setting !== '') {
                         switch ($i) {
                             // Check for the mandatory first param: icon.
                             case 0:
@@ -79,7 +81,8 @@ function local_navbarplus_render_navbar_output() {
                                 // Check if it's matching the Font Awesome pattern.
                                 if (preg_match($faiconpattern, $setting) > 0) {
                                     $iconfaidentifier = $setting;
-                                    $itemvisible = true;
+                                } else {
+                                    $itemvisible = false;
                                 }
                                 break;
                             // Check for the mandatory second param: URL.
@@ -87,7 +90,19 @@ function local_navbarplus_render_navbar_output() {
                                 // Get the URL.
                                 try {
                                     $itemurl = new \core\url($setting);
-                                    $itemvisible = true;
+                                    // Only allow URLs with the http, https or mailto scheme or without any scheme.
+                                    // Other schemes like javascript: would run script code in the browser,
+                                    // so we hide the icon in this case.
+                                    // A URL without a scheme but with a host is hidden as well, as a value like
+                                    // javascript:1/alert(1) is parsed as host and port and would bypass the check otherwise.
+                                    $itemurlscheme = strtolower($itemurl->get_scheme());
+                                    if (
+                                        !in_array($itemurlscheme, ['', 'http', 'https', 'mailto']) ||
+                                        ($itemurlscheme === '' && $itemurl->get_host() !== '')
+                                    ) {
+                                        $itemurl = null;
+                                        $itemvisible = false;
+                                    }
                                 } catch (moodle_exception $exception) {
                                     // We're not actually worried about this, we don't want to mess up the display
                                     // just for a wrongly entered URL. We just hide the icon in this case.
@@ -98,14 +113,13 @@ function local_navbarplus_render_navbar_output() {
                             // Check for the mandatory third param: text for title and alt attribute.
                             case 2:
                                 $itemtitle = $setting;
-                                $itemvisible = true;
                                 break;
                             // Check for the optional fourth param: language support.
                             case 3:
                                 // Only proceed if something is entered here. This parameter is optional.
                                 // If no language is given the icon will be displayed in the navbar by default.
                                 $itemlanguages = array_map('trim', explode(',', $setting));
-                                $itemvisible &= in_array(current_language(), $itemlanguages);
+                                $itemvisible = $itemvisible && in_array(current_language(), $itemlanguages);
                                 break;
                             // Check for the optional fifth param: the target attribute.
                             case 4:
@@ -131,7 +145,11 @@ function local_navbarplus_render_navbar_output() {
             // This is if all mandatory params are set and the item matches the optional given language setting.
             if ($itemvisible) {
                 // To address accessibility, we need to define the icon here because the title from the next pipe is needed.
-                $itemicon = '<i class="icon fa ' . $iconfaidentifier . ' fa-fw" aria-label="' . $itemtitle . '"></i>';
+                // The icon is built with html_writer to make sure that the title is escaped in the aria-label attribute.
+                $itemicon = html_writer::tag('i', '', [
+                    'class' => 'icon fa ' . $iconfaidentifier . ' fa-fw',
+                    'aria-label' => $itemtitle,
+                ]);
                 // Set attributes for title and alt.
                 $linkattributes = ['title' => $itemtitle];
                 // If optional param for itemopeninnewwindow is set to true add a target=_blank to the link.
@@ -163,7 +181,8 @@ function local_navbarplus_render_navbar_output() {
     }
     // If setting resetuseertours is enabled.
     if (isset($config->resetusertours) && $config->resetusertours == true) {
-        if (isloggedin() || !isguestuser()) {
+        // Only proceed if the user is logged in, is not a guest and the user tours plugin is present.
+        if (isloggedin() && !isguestuser() && class_exists('\tool_usertours\manager')) {
             // Get the tour for the current page.
             $tour = \tool_usertours\manager::get_current_tours();
             if (!empty($tour)) {
