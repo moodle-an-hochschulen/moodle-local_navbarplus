@@ -4,7 +4,7 @@ moodle-local_navbarplus
 Changes
 -------
 
-### Unreleased
+### v5.0-r6
 
 * 2026-10-31 - Tests: Combine the Behat scenarios for valid and invalid mandatory attributes of the icons with links into scenario outlines.
 * 2026-10-31 - Bugfix: Also hide the icon with link if the URL has no scheme but a host, as a value like javascript:1/alert(1) bypassed the URL scheme check otherwise.
