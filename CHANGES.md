@@ -4,6 +4,10 @@ moodle-local_navbarplus
 Changes
 -------
 
+### Unreleased
+
+* 2026-11-14 - Improvement: Set the aria-label attribute on the navbar links instead of on the icons, hide the decorative icons from assistive technology and remove the invalid alt attribute from the reset user tour link.
+
 ### v4.5-r6
 
 * 2026-11-08 - Bugfix: Link to the Bootstrap 4 documentation instead of the Bootstrap 5 documentation in the plugin settings and the README, as Moodle 4.5 still uses Bootstrap 4.
