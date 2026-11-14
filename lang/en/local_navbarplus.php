@@ -37,7 +37,7 @@ Further information to the parameters:
 <ul>
 <li><b>Image:</b> You can add Font Awesome icon identifiers (<a href="https://fontawesome.com/v6/icons">See the icon list on fontawesome.com/v6/icons</a>). Font Awesome 6 is included in Moodle core.</li>
 <li><b>Link:</b> The link target can be defined by a full web URL (e.g. https://moodle.org) or a relative path within your Moodle instance (e.g. /login/logout.php). Besides that, a mailto: link (e.g. mailto:support@example.com) can be used as well. Other URL schemes are not supported and the icon will not be shown in this case.</li>
-<li><b>Title:</b> This text will be written in the title and alt attributes of the icon.</li>
+<li><b>Title:</b> This text will be written in the title and aria-label attributes of the link.</li>
 <li><b>Supported language(s) (optional):</b> This setting can be used for displaying the link to users of the specified language only. Separate more than one supported language with commas. If the link should be displayed in all languages, then leave this field empty.</li>
 <li><b>New window (optional)</b>:  By default the link will be opened in the same window and the value of this setting is set to false. If you want to open the link in a new window set the value to true.</li>
 <li><b>Additional classes (optional)</b>: You can add individual classes with this optional parameter. A common use case might be to add Bootstrap\'s responsive classes to hide an icon for specific display sizes. <br/> You can look up the definitions for the responsive Bootstrap display classes for <a href="https://getbootstrap.com/docs/5.2/utilities/display/">Bootstrap version 5</a> for all Boost based themes.<br/>
