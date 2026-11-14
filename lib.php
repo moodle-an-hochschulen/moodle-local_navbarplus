@@ -32,8 +32,6 @@ use core\output\html_writer;
  * @return string HTML for the navbar
  */
 function local_navbarplus_render_navbar_output() {
-    global $OUTPUT;
-
     // Fetch overall config.
     $config = get_config('local_navbarplus');
     // Initialize output.
@@ -110,7 +108,7 @@ function local_navbarplus_render_navbar_output() {
                                     $itemvisible = false;
                                 }
                                 break;
-                            // Check for the mandatory third param: text for title and alt attribute.
+                            // Check for the mandatory third param: text for title and aria-label attribute.
                             case 2:
                                 $itemtitle = $setting;
                                 break;
@@ -144,14 +142,14 @@ function local_navbarplus_render_navbar_output() {
             // Add link with icon as a child to the surrounding div only if it should be displayed.
             // This is if all mandatory params are set and the item matches the optional given language setting.
             if ($itemvisible) {
-                // To address accessibility, we need to define the icon here because the title from the next pipe is needed.
-                // The icon is built with html_writer to make sure that the title is escaped in the aria-label attribute.
+                // The icon is purely decorative, so it is hidden from assistive technology.
                 $itemicon = html_writer::tag('i', '', [
                     'class' => 'icon fa ' . $iconfaidentifier . ' fa-fw',
-                    'aria-label' => $itemtitle,
+                    'aria-hidden' => 'true',
                 ]);
-                // Set attributes for title and alt.
-                $linkattributes = ['title' => $itemtitle];
+                // To address accessibility, the link gets its accessible name from the aria-label attribute.
+                // The attributes are escaped by html_writer when the link is built.
+                $linkattributes = ['title' => $itemtitle, 'aria-label' => $itemtitle];
                 // If optional param for itemopeninnewwindow is set to true add a target=_blank to the link.
                 if ($itemopeninnewwindow) {
                     $linkattributes['target'] = '_blank';
@@ -190,17 +188,18 @@ function local_navbarplus_render_navbar_output() {
                 $output .= html_writer::start_tag('div', ['class' => 'localnavbarplus',
                                                                'id' => 'localnavbarplus-resetusertour', ]);
                 // Use the Font Awesome icon "map".
-                $itemicon = '<i class="icon fa fa-map fa-fw"></i>';
+                // The icon is purely decorative, so it is hidden from assistive technology.
+                $itemicon = html_writer::tag('i', '', ['class' => 'icon fa fa-map fa-fw', 'aria-hidden' => 'true']);
                 // Use the string for resetting the tour.
                 $resetstring = get_string('resettouronpage', 'tool_usertours');
                 $resethint = get_string('resetusertours_hint', 'local_navbarplus');
-                // Set the alt and title attribute and set the id for resetting the tour as well.
+                $resettitle = $resetstring . ' ' . $resethint;
+                // Set the title and aria-label attribute and set the id for resetting the tour as well.
                 // Before Moodle 4.0, the click handler for the reset user tours link was registered with a
                 // data-action attribute. However, in Moodle 4.0 the click handler is looking for the id
                 // of the link. Unfortunately, if we set the id for this link to 'resetpagetour', we have
                 // a duplicate id in the document. We are sorry for that, but we accept it as unavoidable.
-                $attributes = ['alt' => $resetstring, 'title' => $resetstring . ' ' . $resethint,
-                                    'id' => 'resetpagetour', ];
+                $attributes = ['title' => $resettitle, 'aria-label' => $resettitle, 'id' => 'resetpagetour'];
                 // Set the same classes as for the icons with links to give this icon the same look as the other navbar icons.
                 $attributes['class'] = 'nav-link position-relative icon-no-margin';
                 // Add the link to the HTML.
