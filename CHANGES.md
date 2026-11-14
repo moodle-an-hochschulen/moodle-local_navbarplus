@@ -4,6 +4,10 @@ moodle-local_navbarplus
 Changes
 -------
 
+### Unreleased
+
+* 2026-11-14 - Improvement: Set the aria-label attribute on the navbar links instead of on the icons, hide the decorative icons from assistive technology and remove the invalid alt attribute from the reset user tour link.
+
 ### v5.3-r2
 
 * 2026-10-31 - Tests: Combine the Behat scenarios for valid and invalid mandatory attributes of the icons with links into scenario outlines.
